@@ -1,0 +1,34 @@
+name: Publish scheduled releases
+
+# Every day at 20:00 Vietnam time: a draft release whose date in schedule.json has come is
+# published (and becomes "latest", so the apps offer the update). Run by hand to publish now.
+on:
+  schedule:
+    - cron: "0 13 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Publish due drafts
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+        run: |
+          today=$(TZ=Asia/Ho_Chi_Minh date +%F)
+          drafts=$(gh release list --repo "$REPO" --json tagName,isDraft -q '.[] | select(.isDraft) | .tagName')
+          # Oldest first, so the newest due release ends up "latest".
+          for tag in $(python3 -c 'import json; d=json.load(open("schedule.json")); print(" ".join(sorted((k for k in d if k.startswith("v")), key=lambda k: [int(x) for x in k[1:].split(".")])))'); do
+            due=$(python3 -c "import json; print(json.load(open('schedule.json'))['$tag'])")
+            if [ "$due" \> "$today" ]; then echo "$tag: chờ tới $due"; continue; fi
+            if echo "$drafts" | grep -qx "$tag"; then
+              gh release edit "$tag" --repo "$REPO" --draft=false --latest && echo "$tag: đã đăng"
+            else
+              echo "$tag: không có bản nháp (đã đăng hoặc đã xoá)"
+            fi
+          done

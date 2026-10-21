@@ -710,10 +710,11 @@ footer .legal{max-width:560px}
   /* ---------- install tabs ---------- */
   const isIOS = /iPhone|iPad|iPod/.test(navigator.userAgent) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
   const setPane = p => {
-    document.querySelectorAll(".tabs button").forEach(b => b.classList.toggle("on", b.dataset.pane === p));
+    document.querySelectorAll("#cai-dat .tabs button").forEach(b => b.classList.toggle("on", b.dataset.pane === p));
     document.querySelectorAll(".pane").forEach(x => x.classList.toggle("on", x.id === "pane-" + p));
   };
-  document.querySelectorAll(".tabs button").forEach(b => b.onclick = () => setPane(b.dataset.pane));
+  // Only the install section's tabs: the download dialog has its own (they were overwritten, both lit, no switching).
+  document.querySelectorAll("#cai-dat .tabs button").forEach(b => b.onclick = () => setPane(b.dataset.pane));
   if (isIOS) setPane("ios");
 
   /* ---------- latest release: download links, version, changelog ---------- */

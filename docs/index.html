@@ -78,7 +78,7 @@ section{padding:110px 0;position:relative}
 .live .dot{width:8px;height:8px;border-radius:50%;background:var(--green);flex:none;animation:ping 1.6s infinite}
 @keyframes ping{0%{box-shadow:0 0 0 0 rgba(34,197,94,.7)}70%{box-shadow:0 0 0 9px rgba(34,197,94,0)}100%{box-shadow:0 0 0 0 rgba(34,197,94,0)}}
 .cluster .ring{fill:none;stroke:var(--red);stroke-width:4;stroke-dasharray:260;stroke-dashoffset:260;pointer-events:none}
-.cluster.holding .ring{transition:stroke-dashoffset 3s linear;stroke-dashoffset:0}
+.cluster.holding .ring{transition:stroke-dashoffset 1.5s linear;stroke-dashoffset:0}
 .cluster .nudge{fill:none;stroke:rgba(239,51,64,.9);stroke-width:3;pointer-events:none;animation:nudge 1.8s ease-out infinite;transform-box:fill-box;transform-origin:center}
 @keyframes nudge{0%{opacity:.9;transform:scale(.92)}100%{opacity:0;transform:scale(1.3)}}
 .dash{position:relative;background:radial-gradient(120% 120% at 50% 0%,#1d1d24,#0c0c10 70%);border-radius:38px;padding:22px 22px 26px;box-shadow:0 40px 90px rgba(0,0,0,.6),inset 0 1px 0 rgba(255,255,255,.06);border:1px solid #23232c}
@@ -320,7 +320,7 @@ footer .legal{max-width:560px}
           </div>
         </div>
         <div style="text-align:center;margin-top:12px"><button class="chip" id="groupBtn" style="cursor:pointer;font:inherit;font-size:13px">◉ Xem minh hoạ đi nhóm</button></div>
-        <p class="hint"><kbd>▲</kbd> <kbd>▼</kbd> đổi màn · <b>giữ <kbd>✓</kbd> 3 giây</b>: Nhà, Đi làm, Yêu thích, Trạm xăng · <kbd>⤺</kbd> quay lại</p>
+        <p class="hint"><kbd>▲</kbd> <kbd>▼</kbd> đổi màn · <b>giữ <kbd>✓</kbd> 1,5 giây</b>: Nhà, Đi làm, Yêu thích, Trạm xăng · <kbd>⤺</kbd> quay lại</p>
       </div>
 
       <!-- Left switch cluster (XMAX), vector -->
@@ -363,12 +363,12 @@ footer .legal{max-width:560px}
     <div class="reveal">
       <div class="eyebrow">Điểm mạnh nhất</div>
       <h2>Cùm công tắc zin,<br>điều khiển được tất cả.</h2>
-      <p class="lead">Không cần chạm vào điện thoại. Các nút có sẵn trên tay lái trái làm hết mọi việc: giữ ✓ 3 giây mở menu NConnect, trong đó Yêu thích tự đổi lệnh theo màn bạn đang xem.</p>
+      <p class="lead">Không cần chạm vào điện thoại. Các nút có sẵn trên tay lái trái làm hết mọi việc: giữ ✓ 1,5 giây mở menu NConnect, trong đó Yêu thích tự đổi lệnh theo màn bạn đang xem.</p>
     </div>
     <div class="ctrl-grid">
       <div class="steps reveal">
         <div class="step" data-step="up"><div class="k">▲▼</div><div><h3>LÊN · XUỐNG</h3><p>Đổi màn: Bản đồ → Bản đồ + thông số xe → Trung tâm thông tin → Âm nhạc → Ảnh. Có hiệu ứng trượt mượt như điện thoại. Khi bật zoom, hai nút này phóng to, thu nhỏ bản đồ.</p></div></div>
-        <div class="step" data-step="hold"><div class="k">✓</div><div><h3>Giữ ✓ 3 giây · menu NConnect</h3><p>Về nhà, Đi làm, Yêu thích, Trạm xăng gần nhất (dữ liệu Google, xếp từ gần đến xa, kèm hướng và khoảng cách), Dừng dẫn đường. Chọn là đi ngay. Bấm nhanh ✓ là menu gốc của đồng hồ.</p></div></div>
+        <div class="step" data-step="hold"><div class="k">✓</div><div><h3>Giữ ✓ 1,5 giây · menu NConnect</h3><p>Về nhà, Đi làm, Yêu thích, Trạm xăng gần nhất (dữ liệu Google, xếp từ gần đến xa, kèm hướng và khoảng cách), Dừng dẫn đường. Chọn là đi ngay. Bấm nhanh ✓ là menu gốc của đồng hồ.</p></div></div>
         <div class="step" data-step="fav"><div class="k">★</div><div><h3>Yêu thích</h3><p>Lệnh riêng cho màn đang xem đứng đầu danh sách, phía dưới là địa điểm yêu thích của bạn, sắp theo khoảng cách.</p></div></div>
         <div class="step" data-step="back"><div class="k">⤺</div><div><h3>Quay lại</h3><p>Đóng menu, trở về màn đang xem.</p></div></div>
       </div>
@@ -383,7 +383,7 @@ footer .legal{max-width:560px}
             <tr><td>Mọi màn</td><td>Nhà, Chỗ làm và các địa điểm bạn đã gắn sao trong app</td></tr>
           </table>
         </div>
-        <p class="hint" style="text-align:left;margin-top:16px">Thử ngay trên đồng hồ ở đầu trang. Bấm vào đồng hồ rồi dùng bàn phím: <kbd>↑</kbd> <kbd>↓</kbd> <kbd>Enter</kbd> (giữ 3 giây) <kbd>Esc</kbd>.</p>
+        <p class="hint" style="text-align:left;margin-top:16px">Thử ngay trên đồng hồ ở đầu trang. Bấm vào đồng hồ rồi dùng bàn phím: <kbd>↑</kbd> <kbd>↓</kbd> <kbd>Enter</kbd> (giữ 1,5 giây) <kbd>Esc</kbd>.</p>
       </div>
     </div>
   </div>
@@ -554,7 +554,7 @@ footer .legal{max-width:560px}
     <div class="faq">
       <details><summary>NConnect có mất phí không?</summary><p>App miễn phí. Tìm đường mặc định miễn phí. Tìm đường VietMap và Google cần mã kích hoạt, liên hệ người phát triển trong nhóm Zalo.</p></details>
       <details><summary>Có cần giữ Y-Connect không?</summary><p>Không. NConnect đã có sẵn thông báo, cuộc gọi, nhạc, thời tiết, thông số xe như Y-Connect. Nên gỡ hoặc thu hồi quyền Bluetooth của Y-Connect và DashConnect để chúng không giành kết nối với xe.</p></details>
-      <details><summary>Có tốn pin, nóng máy không?</summary><p>GPS mới là thứ tốn pin, bản đồ thì gần như không. Bật Tiết kiệm pin (ngay trên đồng hồ: giữ ✓ 3 giây → Yêu thích) để tắt GPS mà vẫn giữ các màn hình. Dẫn đường sẽ tự bật lại GPS khi cần.</p></details>
+      <details><summary>Có tốn pin, nóng máy không?</summary><p>GPS mới là thứ tốn pin, bản đồ thì gần như không. Bật Tiết kiệm pin (ngay trên đồng hồ: giữ ✓ 1,5 giây → Yêu thích) để tắt GPS mà vẫn giữ các màn hình. Dẫn đường sẽ tự bật lại GPS khi cần.</p></details>
       <details><summary>Điện thoại khoá màn hình có chạy không?</summary><p>Có. NConnect chạy nền, tự kết nối khi bật xe. Cần cấp quyền Vị trí "Luôn cho phép" và tắt tối ưu pin, nhất là trên máy OPPO, Xiaomi, vivo, Samsung.</p></details>
       <details><summary>Giới hạn tốc độ có chính xác không?</summary><p>Đường đã có biển trên bản đồ thì dùng biển đó. Đường chưa có biển thì đây là ước tính theo Thông tư 38/2024/TT-BGTVT dựa trên loại đường, khu dân cư và dải phân cách. Đôi khi không khớp biển thật, luôn đi theo biển báo thực tế.</p></details>
       <details><summary>iPhone khác Android ở đâu?</summary><p>iPhone cài bằng file IPA, chưa có trên App Store. Bản đồ trên đồng hồ dùng OpenFreeMap hoặc VietMap; thông báo do iPhone tự chia sẻ cho xe qua Bluetooth. Phiên bản iPhone luôn cùng số với Android.</p></details>
@@ -760,7 +760,7 @@ footer .legal{max-width:560px}
       return;
     }
     if (k === "back") { toast("Đang ở màn chính"); return; }
-    if (k === "ok") { toast("Bấm nhanh ✓ là menu gốc của đồng hồ · giữ ✓ 3 giây để mở menu NConnect"); return; }
+    if (k === "ok") { toast("Bấm nhanh ✓ là menu gốc của đồng hồ · giữ ✓ 1,5 giây để mở menu NConnect"); return; }
     if (SCREENS[cur].id === "music" && Date.now() - volMode < 10000) {
       vol = Math.max(0, Math.min(100, vol + (k === "up" ? 10 : -10))); volMode = Date.now(); toast("Âm lượng " + vol + "%"); return;
     }
@@ -775,8 +775,8 @@ footer .legal{max-width:560px}
     clearTimeout(flashStep.t); flashStep.t = setTimeout(() => document.querySelectorAll(".step").forEach(s => s.classList.remove("on")), 1200);
   }
 
-  // buttons: short press; holding ✓ for 3 s opens the NConnect menu (a short ✓ is the meter's own menu)
-  const HOLD_MS = 3000, cluster = $("#cluster");
+  // buttons: short press; holding ✓ for 1.5 s opens the NConnect menu (a short ✓ is the meter's own menu)
+  const HOLD_MS = 1500, cluster = $("#cluster");
   const hideNudge = () => { const n = $("#nudge"); if (n) n.remove(); };
   document.querySelectorAll("#cluster .key").forEach(g => {
     let t = null, held = false;

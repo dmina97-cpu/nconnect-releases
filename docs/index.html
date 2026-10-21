@@ -39,6 +39,10 @@ h2{font-size:clamp(30px,4.2vw,48px);font-weight:800;margin:10px 0 14px}
 .lead{color:var(--sub);font-size:clamp(16px,1.6vw,19px);max-width:640px}
 section{padding:110px 0;position:relative}
 
+.inapp{display:none;position:sticky;top:0;z-index:60;background:#f5b301;color:#111;font-weight:600;font-size:14.5px;padding:12px 16px;text-align:center;line-height:1.45}
+.inapp.show{display:block}
+.inapp b{font-weight:800}
+.ipa-note{font-size:12.5px;color:var(--dim);margin-top:8px}
 /* nav */
 .nav{position:sticky;top:0;z-index:50;transition:background .3s,border-color .3s;border-bottom:1px solid transparent}
 .nav.solid{background:rgba(9,9,12,.78);backdrop-filter:blur(14px);border-color:var(--line)}
@@ -254,6 +258,7 @@ footer .legal{max-width:560px}
 </head>
 <body>
 
+<div class="inapp" id="inapp">Bạn đang mở trang trong <span id="inappName">ứng dụng</span>, ở đây <b>không tải được file</b>. Bấm <b>⋯</b> (góc trên) → <b>Mở bằng trình duyệt</b> (Safari / Chrome) rồi tải lại.</div>
 <nav class="nav" id="nav">
   <div class="wrap">
     <a class="brand" href="#"><img src="assets/logo.webp" alt="">NConnect</a>
@@ -528,6 +533,7 @@ footer .legal{max-width:560px}
         <div class="s"><div class="n">04</div><h3>Kết nối</h3><p>Bật xe, kết nối lần đầu. Bản iPhone có bản đồ, dẫn đường, Trạm xăng, thông số xe, bảo dưỡng; app tự báo khi có bản mới.</p></div>
       </div>
       <div class="cta" style="margin-top:26px"><a class="btn btn-red" id="dlIpa" href="https://github.com/dmina97-cpu/nconnect-releases/releases/latest">Tải IPA cho iPhone</a></div>
+      <p class="ipa-note">Trên iPhone, file IPA được lưu vào app Tệp (Files). iPhone không cài trực tiếp được, cần cài bằng AltStore / Sideloadly như bước 02.</p>
     </div>
     <div class="reveal">
       <h3 style="margin-top:56px;font-size:20px">Dùng được với</h3>
@@ -615,6 +621,21 @@ footer .legal{max-width:560px}
   addEventListener("scroll", onScroll, { passive: true }); onScroll();
   const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }), { threshold: .12 });
   document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+
+  /* ---------- in-app browsers (Facebook, Messenger, Instagram, Zalo) cannot download files ---------- */
+  const ua = navigator.userAgent;
+  const inApp = /FBAN|FBAV|FB_IAB|FBIOS|Messenger/i.test(ua) ? "Facebook" : /Instagram/i.test(ua) ? "Instagram" : /Zalo/i.test(ua) ? "Zalo" : /Line\//i.test(ua) ? "LINE" : null;
+  if (inApp) {
+    $("#inappName").textContent = "ứng dụng " + inApp;
+    $("#inapp").classList.add("show");
+    document.addEventListener("click", e => {
+      const a = e.target.closest("a[href*='/releases/']");
+      if (!a) return;
+      e.preventDefault();
+      scrollTo({ top: 0, behavior: "smooth" });
+      const b = $("#inapp"); b.style.transition = "none"; b.style.background = "#ff8a3d"; setTimeout(() => { b.style.transition = "background .6s"; b.style.background = ""; }, 300);
+    });
+  }
 
   /* ---------- install tabs ---------- */
   const isIOS = /iPhone|iPad|iPod/.test(navigator.userAgent) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);

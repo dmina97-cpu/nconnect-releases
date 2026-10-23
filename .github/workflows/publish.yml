@@ -1,10 +1,8 @@
 name: Publish scheduled releases
 
-# Every day at 20:00 Vietnam time: a draft release whose date in schedule.json has come is
-# published (and becomes "latest", so the apps offer the update). Run by hand to publish now.
+# No longer runs by itself (owner 23/10: releases go out only when the owner says so). Run by hand
+# to publish a draft whose date in schedule.json has come.
 on:
-  schedule:
-    - cron: "0 13 * * *"
   workflow_dispatch:
 
 permissions:

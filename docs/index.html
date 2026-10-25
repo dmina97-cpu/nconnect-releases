@@ -390,7 +390,7 @@ footer .legal{max-width:560px}
       <div class="steps reveal">
         <div class="step" data-step="up"><div class="k">▲▼</div><div><h3>LÊN · XUỐNG</h3><p>Đổi màn: Bản đồ → Bản đồ + thông số xe → Trung tâm thông tin → Âm nhạc → Ảnh. Có hiệu ứng trượt mượt như điện thoại. Khi bật zoom, hai nút này phóng to, thu nhỏ bản đồ.</p></div></div>
         <div class="step" data-step="hold"><div class="k">✓</div><div><h3>Giữ ✓ 1,5 giây · menu NConnect</h3><p>Về nhà, Đi làm, Yêu thích, Trạm xăng gần nhất (dữ liệu Google, xếp từ gần đến xa, kèm hướng và khoảng cách), Dừng dẫn đường. Chọn là đi ngay. Bấm nhanh ✓ là menu gốc của đồng hồ.</p></div></div>
-        <div class="step" data-step="fav"><div class="k">★</div><div><h3>Yêu thích</h3><p>Lệnh riêng cho màn đang xem đứng đầu danh sách, phía dưới là địa điểm yêu thích của bạn, sắp theo khoảng cách.</p></div></div>
+        <div class="step" data-step="fav"><div class="k">★</div><div><h3>Yêu thích</h3><p>Lệnh riêng cho màn đang xem đứng đầu danh sách (zoom bản đồ, tiết kiệm pin, vừa đổ đầy bình xăng, cần hỗ trợ khi đi nhóm), phía dưới là địa điểm yêu thích của bạn, sắp theo khoảng cách.</p></div></div>
         <div class="step" data-step="back"><div class="k">⤺</div><div><h3>Quay lại</h3><p>Đóng menu, trở về màn đang xem.</p></div></div>
       </div>
       <div class="reveal">
@@ -427,6 +427,8 @@ footer .legal{max-width:560px}
           <li>Thanh dưới hiện tên đường bạn đang đi</li>
           <li>Tự thu nhỏ khi chạy nhanh: Trong phố (20/40/60) hoặc Đường trường (40/60/90 km/h)</li>
           <li>Ô thông số xe trượt vào bên phải bản đồ chỉ với một lần bấm</li>
+          <li>Bản đồ ngày / đêm, chọn màu đường dẫn; khi dẫn đường nền bản đồ tự nhạt đi cho đường nổi hơn</li>
+          <li>Chỉnh to nhỏ, cao thấp mũi tên vị trí; cài đặt có hình xem trước trước khi áp dụng</li>
         </ul>
         <div class="shot"><img src="assets/screen-mapinfo.webp" alt="Bản đồ kèm ô lời chào, thời tiết, ắc quy, nước mát trên đồng hồ" loading="lazy"></div>
       </div>
@@ -434,7 +436,7 @@ footer .legal{max-width:560px}
         <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.5-7-12a7 7 0 0 1 14 0c0 5.5-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg></div>
         <h3>Tìm đường cho xe máy</h3>
         <p>Ba cách tìm đường: miễn phí sẵn có, VietMap hoặc Google (xe máy, tính kẹt xe, giống app Google Maps). VietMap và Google cần mã kích hoạt.</p>
-        <ul><li>Tối đa 3 tuyến, có bản đồ để phóng to kiểm tra</li><li>Tránh phà, bớt chui vào hẻm nhỏ</li><li>Đi lệch là tự tìm lại đường</li></ul>
+        <ul><li>Gợi ý địa điểm ngay khi gõ, ưu tiên chỗ gần bạn; chạm giữ bản đồ để chọn điểm</li><li>Tối đa 3 tuyến, có bản đồ để phóng to kiểm tra</li><li>Tránh phà, bớt chui vào hẻm nhỏ; đi lệch là tự tìm lại đường</li></ul>
       </div>
       <div class="tile w3 reveal">
         <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 5h16v11H8l-4 4z"/></svg></div>
@@ -450,8 +452,8 @@ footer .legal{max-width:560px}
       </div>
       <div class="tile reveal">
         <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
-        <h3>Giới hạn tốc độ theo luật</h3>
-        <p>Đường đã có biển trên bản đồ thì dùng biển. Đường chưa có biển thì NConnect tự phân loại đường để ước tính giới hạn cho xe máy theo <b>Thông tư 38/2024/TT-BGTVT</b>.</p>
+        <h3>Biển tốc độ và camera</h3>
+        <p>Đi qua biển giới hạn nào (đúng chiều xe chạy, có cả biển của Sở GTVT TP.HCM), đồng hồ báo theo biển đó. Camera CSGT, camera AI và camera bắn tốc độ phía trước hiện kèm khoảng cách khi còn dưới 350 m. Đường chưa có biển thì ước tính theo <b>Thông tư 38/2024/TT-BGTVT</b>, xe máy tối đa 70 km/h.</p>
         <div class="law"><div class="sign">60</div><p style="font-size:13.5px">Trong khu dân cư: 60 km/h (đường đôi, một chiều ≥ 2 làn) hoặc 50. Ngoài khu dân cư: 70 hoặc 60. <b>Chỉ là ước tính</b>, luôn đi theo biển thực tế.</p></div>
       </div>
       <div class="tile reveal">
@@ -461,14 +463,16 @@ footer .legal{max-width:560px}
         <ul><li>Nhắc bảo dưỡng theo km: nhớt máy, nhớt láp, lọc gió, bugi, dây curoa</li><li>Đồng hồ nhắc khi sắp tới hạn</li></ul>
       </div>
       <div class="tile reveal">
-        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 20h18"/><rect x="5" y="11" width="3" height="7"/><rect x="10.5" y="6" width="3" height="12"/><rect x="16" y="9" width="3" height="9"/></svg></div>
-        <h3>Hành trình và nhiên liệu</h3>
-        <p>Tổng kết hôm nay, 7 ngày, tháng này. Từng chuyến vẽ trên bản đồ, kèm tốc độ cao nhất, tốc độ trung bình và nhiên liệu (L/100km) đọc từ bộ đếm xăng của xe.</p>
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="10" height="17" rx="1.5"/><path d="M6.5 8h5M14 9h2.5a1.5 1.5 0 0 1 1.5 1.5V16a1.5 1.5 0 0 0 3 0V8l-3-3"/></svg></div>
+        <h3>Xăng còn bao nhiêu km <span class="badge">MỚI</span></h3>
+        <p>Đổ đầy bình rồi bấm "Vừa đổ đầy" (trên điện thoại, hoặc ngay trên xe ở menu Yêu thích). NConnect cộng lượng xăng xe báo đã dùng, tính số km còn đi được theo mức tiêu hao của chính bạn.</p>
+        <ul><li>Số km hiện ở góc trên bản đồ trên đồng hồ</li><li>Dưới 40 km thì nhắc tìm trạm xăng</li><li>XMAX 13 L, NMAX 7,1 L hoặc tự nhập dung tích</li></ul>
       </div>
       <div class="tile w3 reveal">
         <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M14 20c0-2.5 1.5-4.5 4-4.5s3 1.5 3 3"/></svg></div>
         <h3>Đi nhóm</h3>
         <p>Một người tạo nhóm, gửi mã 6 số cho anh em. Vị trí từng người hiện thành chấm màu kèm chữ cái đầu và tên ngay trên bản đồ của đồng hồ, có điểm hẹn chung. Không cần nhìn điện thoại vẫn biết anh em đang ở đâu.</p>
+        <ul><li>Báo khi có người tụt lại phía sau, mất tín hiệu, hoặc chính bạn bị tụt lại</li><li>"Cần hỗ trợ" từ menu trên xe: cả nhóm nhận thông báo, vị trí của bạn khoanh đỏ trên bản đồ</li></ul>
         <div class="shot"><img src="assets/screen-group.webp" alt="Đi nhóm: chấm vị trí của Tuấn, Hùng, Minh trên bản đồ đồng hồ" loading="lazy"></div>
       </div>
       <div class="tile w3 reveal">
@@ -482,9 +486,24 @@ footer .legal{max-width:560px}
           <li>Màn hình chào bằng video mỗi lần bật xe</li>
         </ul>
       </div>
+      <div class="tile reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 20h18"/><rect x="5" y="11" width="3" height="7"/><rect x="10.5" y="6" width="3" height="12"/><rect x="16" y="9" width="3" height="9"/></svg></div>
+        <h3>Hành trình và nhiên liệu</h3>
+        <p>Tổng kết hôm nay, 7 ngày, tháng này. Từng chuyến vẽ trên bản đồ, kèm tốc độ cao nhất, tốc độ trung bình và nhiên liệu (L/100km) đọc từ bộ đếm xăng của xe. Dừng đổ xăng hay mất kết nối giữa đường vẫn là một chuyến.</p>
+      </div>
+      <div class="tile reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="3" width="16" height="18" rx="3"/><path d="M10 16V8h3a2.5 2.5 0 0 1 0 5h-3"/></svg></div>
+        <h3>Vị trí đỗ xe</h3>
+        <p>Tắt máy là app nhớ chỗ đỗ. Trang chủ hiện địa chỉ, đỗ bao lâu, đường đi bộ quay lại và nút gửi vị trí cho người khác.</p>
+      </div>
+      <div class="tile reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12M7 10l5 5 5-5"/><path d="M4 17v3h16v-3"/></svg></div>
+        <h3>Sao lưu, đổi bộ nút</h3>
+        <p>Sao lưu cài đặt, địa điểm, hồ sơ xe, các chuyến đi vào Zalo, Telegram hoặc tự lưu mỗi tuần; đổi máy là khôi phục lại. Chọn bộ nút LÊN / XUỐNG: bấm đúp để phóng to bản đồ hoặc chuyển bài.</p>
+      </div>
       <div class="tile w3 reveal">
         <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="12" cy="12" r="3"/></svg></div>
-        <h3>Khoe chuyến đi <span class="badge">ĐANG PHÁT TRIỂN</span></h3>
+        <h3>Khoe chuyến đi</h3>
         <p>Thời gian tăng tốc 0–60 và 0–100 km/h của từng chuyến. Tạo ảnh chia sẻ kiểu app chạy bộ: nền bản đồ có tuyến đường, hoặc ảnh của bạn kèm bản đồ nhỏ, tự chọn thông số, khung bài đăng hoặc story. Biển số và ODO không bao giờ hiện trên ảnh.</p>
         <div class="shot share-real"><img src="assets/share-real.webp" alt="Ảnh chia sẻ chuyến đi thật tạo bằng NConnect: ảnh xe kèm bản đồ nhỏ và thông số" loading="lazy"></div>
       </div>
@@ -546,7 +565,7 @@ footer .legal{max-width:560px}
         <div class="s"><div class="n">01</div><h3>Tải IPA</h3><p>NConnect cho iPhone chưa có trên App Store, cần tự cài file IPA.</p></div>
         <div class="s"><div class="n">02</div><h3>Cài bằng máy tính</h3><p>Dùng AltStore, Sideloadly hoặc công cụ tương tự. <a href="https://www.youtube.com/watch?v=r5UW4oY0Sx4" target="_blank" rel="noopener" style="color:var(--red);font-weight:600">Xem video hướng dẫn cài bằng máy tính ›</a></p></div>
         <div class="s"><div class="n">03</div><h3>Cấp quyền</h3><p>Bluetooth, Vị trí "Luôn luôn". Bật "Chia sẻ thông báo hệ thống" cho xe trong Cài đặt Bluetooth để nhận thông báo.</p></div>
-        <div class="s"><div class="n">04</div><h3>Kết nối</h3><p>Bật xe, kết nối lần đầu. Bản iPhone có bản đồ, dẫn đường, Trạm xăng, thông số xe, bảo dưỡng; app tự báo khi có bản mới.</p></div>
+        <div class="s"><div class="n">04</div><h3>Kết nối</h3><p>Bật xe, kết nối lần đầu. Bản iPhone có bản đồ, dẫn đường, Trạm xăng, biển tốc độ và camera, xăng còn bao nhiêu km, đi nhóm, thông số xe, bảo dưỡng, chuyến đi; app tự báo khi có bản mới.</p></div>
       </div>
       <div class="cta" style="margin-top:26px"><a class="btn btn-red" id="dlIpa" data-dl href="https://github.com/dmina97-cpu/nconnect-releases/releases/latest">Tải IPA cho iPhone</a></div>
       <p class="ipa-note">Trên iPhone, file IPA được lưu vào app Tệp (Files). iPhone không cài trực tiếp được, cần cài bằng AltStore / Sideloadly như bước 02.</p>
@@ -578,8 +597,9 @@ footer .legal{max-width:560px}
       <details><summary>Có cần giữ Y-Connect không?</summary><p>Không. NConnect đã có sẵn thông báo, cuộc gọi, nhạc, thời tiết, thông số xe như Y-Connect. Nên gỡ hoặc thu hồi quyền Bluetooth của Y-Connect và DashConnect để chúng không giành kết nối với xe.</p></details>
       <details><summary>Có tốn pin, nóng máy không?</summary><p>GPS mới là thứ tốn pin, bản đồ thì gần như không. Bật Tiết kiệm pin (ngay trên đồng hồ: giữ ✓ 1,5 giây → Yêu thích) để tắt GPS mà vẫn giữ các màn hình. Dẫn đường sẽ tự bật lại GPS khi cần.</p></details>
       <details><summary>Điện thoại khoá màn hình có chạy không?</summary><p>Có. NConnect chạy nền, tự kết nối khi bật xe. Cần cấp quyền Vị trí "Luôn cho phép" và tắt tối ưu pin, nhất là trên máy OPPO, Xiaomi, vivo, Samsung.</p></details>
-      <details><summary>Giới hạn tốc độ có chính xác không?</summary><p>Đường đã có biển trên bản đồ thì dùng biển đó. Đường chưa có biển thì đây là ước tính theo Thông tư 38/2024/TT-BGTVT dựa trên loại đường, khu dân cư và dải phân cách. Đôi khi không khớp biển thật, luôn đi theo biển báo thực tế.</p></details>
+      <details><summary>Giới hạn tốc độ và camera có chính xác không?</summary><p>Đi qua biển giới hạn tốc độ có trong dữ liệu thì đồng hồ báo theo biển đó; camera là dữ liệu tham khảo, tải theo khu vực bạn đi. Đường đã có biển trên bản đồ thì dùng biển đó. Đường chưa có biển thì đây là ước tính theo Thông tư 38/2024/TT-BGTVT dựa trên loại đường, khu dân cư và dải phân cách. Đôi khi không khớp biển thật, luôn đi theo biển báo thực tế.</p></details>
       <details><summary>iPhone khác Android ở đâu?</summary><p>iPhone cài bằng file IPA, chưa có trên App Store. Bản đồ trên đồng hồ dùng OpenFreeMap hoặc VietMap; thông báo do iPhone tự chia sẻ cho xe qua Bluetooth. Phiên bản iPhone luôn cùng số với Android.</p></details>
+      <details><summary>Quãng đường còn đi được tính thế nào?</summary><p>Xe không báo mức xăng trong bình, chỉ báo lượng xăng đã phun. Sau khi bạn bấm "Vừa đổ đầy", NConnect lấy dung tích bình trừ lượng xăng đã dùng, nhân với mức tiêu hao của bạn trong 30 ngày gần nhất. Đổ không đầy hoặc quên bấm thì số sẽ lệch.</p></details>
       <details><summary>Có ảnh hưởng tới xe hay bảo hành không?</summary><p>NConnect chỉ kết nối Bluetooth như app chính hãng, không ghi gì vào xe, không cần lắp thêm phần cứng. NConnect không liên kết với Yamaha hay Garmin.</p></details>
     </div>
   </div>

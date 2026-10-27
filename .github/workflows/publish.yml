@@ -1,9 +1,12 @@
 name: Publish scheduled releases
 
-# No longer runs by itself (owner 23/10: releases go out only when the owner says so). Run by hand
-# to publish a draft whose date in schedule.json has come.
+# Releases go out only when the owner says so (23/10). Run by hand to publish a draft whose date in
+# schedule.json has come; a one-off time can be added under schedule (owner 28/10: 0.8.7 at 11:00).
 on:
   workflow_dispatch:
+  schedule:
+    # 04:00 UTC = 11:00 Việt Nam, 28/10 only (remove after it ran).
+    - cron: "0 4 28 10 *"
 
 permissions:
   contents: write

@@ -4,9 +4,6 @@ name: Publish scheduled releases
 # schedule.json has come; a one-off time can be added under schedule (owner 28/10: 0.8.7 at 11:00).
 on:
   workflow_dispatch:
-  schedule:
-    # 04:00 UTC = 11:00 Việt Nam, 28/10 only (remove after it ran).
-    - cron: "0 4 28 10 *"
 
 permissions:
   contents: write

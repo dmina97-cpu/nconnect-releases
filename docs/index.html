@@ -7,9 +7,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>NConnect · Bản đồ lên đồng hồ Yamaha XMAX, NMAX</title>
-<meta name="description" content="NConnect đưa bản đồ Google / VietMap, dẫn đường, thông báo, cuộc gọi, nhạc và thông số xe lên đồng hồ TFT của Yamaha XMAX 300, NMAX 155. Điều khiển bằng cùm công tắc zin. Không cần Y-Connect.">
-<meta property="og:title" content="NConnect · Bản đồ lên đồng hồ Yamaha XMAX, NMAX">
+<title>NConnect · Bản đồ lên đồng hồ Yamaha XMAX, NMAX, TMAX, Tracer</title>
+<meta name="description" content="NConnect đưa bản đồ Google / VietMap, dẫn đường, thông báo, cuộc gọi, nhạc và thông số xe lên đồng hồ TFT của Yamaha XMAX 300, NMAX 155, TMAX 560, Tracer 9. Điều khiển bằng cùm công tắc zin. Không cần Y-Connect.">
+<meta property="og:title" content="NConnect · Bản đồ lên đồng hồ Yamaha XMAX, NMAX, TMAX, Tracer">
 <meta property="og:description" content="Bản đồ, dẫn đường, thông báo và nhạc ngay trên đồng hồ TFT. Điều khiển bằng cùm công tắc zin.">
 <meta property="og:image" content="assets/dash-real.webp">
 <meta name="theme-color" content="#0b0b0e">
@@ -79,10 +79,12 @@ section{padding:110px 0;position:relative}
 @media(max-width:860px){.nav-links{display:none}.nav .btn{margin-left:auto;padding:9px 14px;font-size:13.5px}.nav .wrap{gap:12px}.lang-btn{margin-left:auto}.nav .lang-btn+.btn{margin-left:0}}
 
 /* hero */
-.hero{padding:52px 0 70px;min-height:calc(100vh - 68px);display:flex;align-items:center;overflow:hidden}
+.hero{padding:40px 0 56px;min-height:calc(100vh - 68px);display:flex;align-items:center;overflow:hidden}
 .hero::before{content:"";position:absolute;inset:-20% -10% auto;height:900px;background:radial-gradient(600px 380px at 70% 35%,rgba(239,51,64,.22),transparent 70%),radial-gradient(500px 300px at 15% 10%,rgba(59,130,246,.10),transparent 70%);pointer-events:none}
-.hero-grid{display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1.38fr);gap:44px;align-items:center;position:relative}
-.hero h1{font-size:clamp(36px,4.4vw,58px);font-weight:800}
+.hero>.wrap{max-width:1320px}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:56px;align-items:center;position:relative}
+.hero h1{font-size:clamp(34px,3.4vw,52px);font-weight:800;text-wrap:balance}
+.hero .eyebrow{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .hero h1 em{font-style:normal;background:linear-gradient(90deg,var(--red),#ff8a5b);-webkit-background-clip:text;background-clip:text;color:transparent}
 .hero .lead{margin:20px 0 30px}
 .cta{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
@@ -96,7 +98,8 @@ section{padding:110px 0;position:relative}
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}
 .chip{font-size:13px;padding:7px 12px;border-radius:999px;background:var(--card);border:1px solid var(--line);color:var(--sub)}
 .chip b{color:var(--text);font-weight:600}
-@media(max-width:980px){.hero-grid{grid-template-columns:1fr}.hero{min-height:auto}}
+@media(max-width:1180px){.hero-grid{grid-template-columns:1fr}.hero{min-height:auto}}
+@media(max-width:640px){.hero .eyebrow{white-space:normal}}
 
 /* simulator */
 .sim{outline:none;position:relative;display:grid;grid-template-columns:auto minmax(0,1fr);gap:22px;align-items:center}
@@ -300,8 +303,8 @@ footer .legal{max-width:560px}
 <header class="hero">
   <div class="wrap hero-grid">
     <div>
-      <div class="eyebrow">Cho Yamaha XMAX 300 · NMAX 155</div>
-      <h1>Bản đồ, dẫn đường và cả điện thoại, <em>lên Xmax 300, Nmax 155.</em></h1>
+      <div class="eyebrow">Cho Yamaha XMAX 300 · NMAX 155 · TMAX 560 · Tracer 9</div>
+      <h1>Bản đồ, dẫn đường và cả điện thoại, <em>ngay trên đồng hồ Yamaha.</em></h1>
       <p class="lead">NConnect đưa Google Maps hoặc VietMap, thông báo, cuộc gọi, nhạc và thông số xe lên màn TFT zin. Điều khiển tất cả bằng cùm công tắc trên tay lái, điện thoại cứ để trong cốp. Không cần Y-Connect.</p>
       <div class="cta">
         <a class="btn btn-red dl-primary" id="dlMain" data-dl href="https://github.com/dmina97-cpu/nconnect-releases/releases/latest">
@@ -428,9 +431,21 @@ footer .legal{max-width:560px}
     <div class="reveal">
       <div class="eyebrow">Tính năng</div>
       <h2>Mọi thứ của Y-Connect, và nhiều hơn thế.</h2>
-      <p class="lead">NConnect tự đăng nhập bộ điều khiển (CCU) của xe như Y-Connect, rồi truyền hình lên đồng hồ như Garmin StreetCross. Một app thay cho ba app.</p>
+      <p class="lead">Với XMAX, NMAX: NConnect tự đăng nhập bộ điều khiển (CCU) của xe như Y-Connect, rồi truyền hình lên đồng hồ như Garmin StreetCross. Với TMAX, Tracer 9: NConnect thay MyRide-Link, đưa bản đồ qua Wi-Fi của xe hoặc cáp USB. Một app cho cả hai dòng xe.</p>
     </div>
     <div class="bento">
+      <div class="tile w6 glow reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 9a15 15 0 0 1 20 0"/><path d="M5.5 12.5a10 10 0 0 1 13 0"/><path d="M9 16a5 5 0 0 1 6 0"/><circle cx="12" cy="19.5" r="1"/></svg></div>
+        <h3>TMAX 560 · Tracer 9 <span class="badge">BẢN TỚI</span></h3>
+        <p>Cùng một app NConnect, cùng mọi tính năng trên điện thoại. Đồng hồ của TMAX và Tracer nhận hình qua Wi-Fi của xe hoặc cáp USB, nên bản đồ mượt tới 30 khung mỗi giây.</p>
+        <ul>
+          <li>Chọn loại xe TMAX / Tracer 9 lúc cài, nhập mã PIN đang hiện trên đồng hồ một lần</li>
+          <li>App tự vào Wi-Fi của xe, điện thoại vẫn dùng 4G / 5G</li>
+          <li>Giữ HOME 1 giây để hiện bản đồ; LÊN / XUỐNG đổi màn, giữ LÊN / XUỐNG phóng to, thu nhỏ, OK mở menu</li>
+          <li>Dẫn đường, thông báo, nhạc, xăng còn bao nhiêu km, đi nhóm, Android Auto như XMAX</li>
+          <li>Hiện chỉ có trên Android</li>
+        </ul>
+      </div>
       <div class="tile w4 glow reveal">
         <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6l6-3 6 3 6-3v15l-6 3-6-3-6 3z"/><path d="M9 3v15M15 6v15"/></svg></div>
         <h3>Bản đồ thật trên đồng hồ</h3>
@@ -552,7 +567,7 @@ footer .legal{max-width:560px}
     <div class="reveal">
       <div class="eyebrow">Ngoài đời</div>
       <h2>Chạy trên đồng hồ zin, không độ chế.</h2>
-      <p class="lead">Không lắp thêm phần cứng, không can thiệp vào xe. NConnect dùng đúng kết nối Bluetooth mà Yamaha thiết kế cho bản đồ Garmin, nên đồng hồ hiển thị như đồ chính hãng: nút zoom, ô tốc độ, thanh tên đường.</p>
+      <p class="lead">Không lắp thêm phần cứng, không can thiệp vào xe. NConnect dùng đúng kết nối Bluetooth mà Yamaha thiết kế cho bản đồ Garmin, nên đồng hồ hiển thị như đồ chính hãng: nút zoom, ô tốc độ, thanh tên đường. Với TMAX, Tracer 9, NConnect dùng Wi-Fi và cổng USB có sẵn của xe như ứng dụng MyRide-Link.</p>
     </div>
   </div>
 </section>
@@ -569,7 +584,7 @@ footer .legal{max-width:560px}
         <div class="s"><div class="n">01</div><h3>Tắt Play Protect, tải APK</h3><p>CH Play → ảnh đại diện → Play Protect → ⚙ → tắt "Quét ứng dụng bằng Play Protect". Rồi tải APK, mở file để cài, cho phép "cài ứng dụng không rõ nguồn" nếu máy hỏi.</p></div>
         <div class="s"><div class="n">02</div><h3>Cấp quyền</h3><p>Làm theo hướng dẫn lần đầu: Thiết bị ở gần, Vị trí "Luôn cho phép", Thông báo. Tắt tối ưu pin cho NConnect.</p></div>
         <div class="s"><div class="n">03</div><h3>Tắt Y-Connect</h3><p>Gỡ Y-Connect, DashConnect hoặc thu hồi quyền "Thiết bị ở gần" của chúng, để không giành kết nối với xe.</p></div>
-        <div class="s"><div class="n">04</div><h3>Bật xe, Kết nối</h3><p>Bật khoá, bấm Kết nối với xe lần đầu. Từ lần sau chỉ cần bật xe là NConnect tự kết nối.</p></div>
+        <div class="s"><div class="n">04</div><h3>Bật xe, Kết nối</h3><p>Bật khoá, bấm Kết nối với xe lần đầu. Từ lần sau chỉ cần bật xe là NConnect tự kết nối. TMAX, Tracer 9: chọn loại xe TMAX / Tracer 9, nhập mã PIN hiện trên đồng hồ, rồi giữ HOME 1 giây.</p></div>
       </div>
       <div class="cta" style="margin-top:26px"><a class="btn btn-red" id="dlApk" data-dl href="https://github.com/dmina97-cpu/nconnect-releases/releases/latest">Tải APK cho Android</a></div>
     </div>
@@ -585,8 +600,8 @@ footer .legal{max-width:560px}
     </div>
     <div class="reveal">
       <h3 style="margin-top:56px;font-size:20px">Dùng được với</h3>
-      <div class="bikes"><span>Yamaha XMAX 300</span><span>Yamaha NMAX 155</span><span>YZF-R9 <em>2025+</em></span><span>MT-09 / MT-09 SP <em>2024+</em></span><span>XSR900 GP</span></div>
-      <p class="hint" style="text-align:left;margin-top:12px">Các dòng Yamaha có màn TFT hỗ trợ Garmin StreetCross đều có khả năng kết nối.</p>
+      <div class="bikes"><span>Yamaha XMAX 300</span><span>Yamaha NMAX 155</span><span>YZF-R9 <em>2025+</em></span><span>MT-09 / MT-09 SP <em>2024+</em></span><span>XSR900 GP</span><span>Yamaha TMAX 560 <em>bản tới</em></span><span>Tracer 9 <em>bản tới</em></span></div>
+      <p class="hint" style="text-align:left;margin-top:12px">Các dòng Yamaha có màn TFT hỗ trợ Garmin StreetCross (Bluetooth) hoặc MyRide-Link (Wi-Fi / USB) đều có khả năng kết nối.</p>
     </div>
   </div>
 </section>
@@ -611,9 +626,10 @@ footer .legal{max-width:560px}
       <details><summary>Có tốn pin, nóng máy không?</summary><p>GPS mới là thứ tốn pin, bản đồ thì gần như không. Bật Tiết kiệm pin (ngay trên đồng hồ: giữ ✓ 1,5 giây → Yêu thích) để tắt GPS mà vẫn giữ các màn hình. Dẫn đường sẽ tự bật lại GPS khi cần.</p></details>
       <details><summary>Điện thoại khoá màn hình có chạy không?</summary><p>Có. NConnect chạy nền, tự kết nối khi bật xe. Cần cấp quyền Vị trí "Luôn cho phép" và tắt tối ưu pin, nhất là trên máy OPPO, Xiaomi, vivo, Samsung.</p></details>
       <details><summary>Giới hạn tốc độ và camera có chính xác không?</summary><p>Đi qua biển giới hạn tốc độ có trong dữ liệu thì đồng hồ báo theo biển đó; camera là dữ liệu tham khảo, tải theo khu vực bạn đi. Đường đã có biển trên bản đồ thì dùng biển đó. Đường chưa có biển thì đây là ước tính theo Thông tư 38/2024/TT-BGTVT dựa trên loại đường, khu dân cư và dải phân cách. Đôi khi không khớp biển thật, luôn đi theo biển báo thực tế.</p></details>
-      <details><summary>iPhone khác Android ở đâu?</summary><p>iPhone cài bằng file IPA, chưa có trên App Store. Bản đồ trên đồng hồ dùng OpenFreeMap hoặc VietMap; thông báo do iPhone tự chia sẻ cho xe qua Bluetooth. Phiên bản iPhone luôn cùng số với Android.</p></details>
+      <details><summary>TMAX, Tracer 9 khác XMAX ở đâu?</summary><p>XMAX, NMAX nhận bản đồ qua Bluetooth, vài khung mỗi giây. TMAX 560 và Tracer 9 nhận qua Wi-Fi của xe hoặc cáp USB nên hình mượt tới 30 khung mỗi giây; khi nối Wi-Fi xe, điện thoại vẫn dùng 4G / 5G. Tính năng trên điện thoại, mã kích hoạt và sao lưu dùng chung một app. TMAX, Tracer 9 có từ bản tiếp theo, hiện chỉ trên Android.</p></details>
+      <details><summary>iPhone khác Android ở đâu?</summary><p>iPhone cài bằng file IPA, chưa có trên App Store. Bản đồ trên đồng hồ dùng OpenFreeMap hoặc VietMap; thông báo do iPhone tự chia sẻ cho xe qua Bluetooth. Phiên bản iPhone luôn cùng số với Android. TMAX, Tracer 9 hiện chỉ có trên Android.</p></details>
       <details><summary>Quãng đường còn đi được tính thế nào?</summary><p>Xe không báo mức xăng trong bình, chỉ báo lượng xăng đã phun. Sau khi bạn bấm "Vừa đổ đầy", NConnect lấy dung tích bình trừ lượng xăng đã dùng, nhân với mức tiêu hao của bạn trong 30 ngày gần nhất. Đổ không đầy hoặc quên bấm thì số sẽ lệch.</p></details>
-      <details><summary>Có ảnh hưởng tới xe hay bảo hành không?</summary><p>NConnect chỉ kết nối Bluetooth như app chính hãng, không ghi gì vào xe, không cần lắp thêm phần cứng. NConnect không liên kết với Yamaha hay Garmin.</p></details>
+      <details><summary>Có ảnh hưởng tới xe hay bảo hành không?</summary><p>NConnect chỉ kết nối Bluetooth, Wi-Fi hoặc USB như app chính hãng, không ghi gì vào xe, không cần lắp thêm phần cứng. NConnect không liên kết với Yamaha hay Garmin.</p></details>
     </div>
   </div>
 </section>

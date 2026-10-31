@@ -339,6 +339,39 @@
     "Thu nhỏ": "Zoom out",
     "Đi nhóm: Tuấn, Hùng, Minh hiện trên bản đồ": "Group ride: Tuấn, Hùng, Minh on the map",
     "Đã tắt minh hoạ đi nhóm": "Group ride demo off",
+    // Release notes of 0.8.7 (the changelog comes from GitHub in Vietnamese).
+    "Báo trước biển cấm rẽ trái, cấm rẽ phải, cấm quay đầu:":
+      "Warning for no left turn, no right turn and no U-turn signs:",
+    "còn 100 m tới giao lộ thì đồng hồ hiện biển và đếm ngược số mét, dưới 30 m chuyển đỏ. Đang dẫn đường thì chỉ báo khi tuyến rẽ đúng lối bị cấm. Chọn bố cục ở Cài đặt → Bản đồ →":
+      "100 m before the junction the dash shows the sign and counts the metres down, turning red under 30 m. While navigating it only warns when the route turns where it's banned. Pick the layout in Settings → Map →",
+    "Biển báo phía trước":
+      "Signs ahead",
+    ", có hình xem trước:":
+      ", with previews:",
+    "Tự đổi khi gần biển":
+      "Swap near a sign",
+    "(mặc định): ô km/h giữ chỗ cũ, gần biển thì thành ô biển báo, qua biển tự về km/h.":
+      "(default): the km/h box stays put, becomes the sign box near a sign and goes back to km/h after it.",
+    "Km/h sang trái:":
+      "Km/h to the left:",
+    "ô km/h ở mép trái, biển báo ở chỗ cũ của km/h.":
+      "the km/h box on the left edge, the sign where km/h was.",
+    "Bỏ ô km/h:":
+      "No km/h box:",
+    "chỉ hiện biển báo, tốc độ xem ở đồng hồ xe.":
+      "signs only, read your speed on the bike's own dash.",
+    "Biển giới hạn tốc độ thấp hơn hiện trước 100 m:":
+      "Lower speed limit signs show 100 m early:",
+    "có vòng và số mét đếm ngược quanh biển, để kịp giảm tốc trước khi tới biển.":
+      "with a ring and a metre countdown around the sign, so you can slow down before you reach it.",
+    "Android Auto trên đồng hồ (thử nghiệm, chỉ Android):":
+      "Android Auto on the dash (experimental, Android only):",
+    "Google Maps, Waze, nhạc… điều khiển bằng cùm công tắc. Chọn ở Cài đặt → Kiểu bản đồ →":
+      "Google Maps, Waze, music… controlled with the switch cluster. Pick it in Settings → Map type →",
+    ", app hướng dẫn từng bước bật chế độ nhà phát triển và máy chủ đầu phát của Android Auto. Hình còn chậm (vài khung mỗi giây), mong anh em thử và báo lỗi.":
+      ", and the app walks you through turning on Android Auto's developer mode and head unit server. The picture is still slow (a few frames a second); please try it and report bugs.",
+    "Kết nối nhạc và Y-Connect ổn định hơn: bài hát có emoji trong tên không còn làm rớt kết nối; khi kết nối chập chờn app không gửi lại nhạc liên tục; xe không trả lời lúc đăng nhập thì app tự thử lại.":
+      "Steadier music and Y-Connect link: songs with emoji in the title no longer drop the connection; on a shaky link the app stops resending the music over and over; if the bike doesn't answer at login the app retries by itself.",
   };
   const PATS = [
     [/^ứng dụng (.+)$/, m => `the ${m[1]} app`],
@@ -387,12 +420,30 @@
     const w = document.createTreeWalker(root, NodeFilter.SHOW_TEXT | NodeFilter.SHOW_ELEMENT);
     for (let n = w.nextNode(); n; n = w.nextNode()) n.nodeType === 3 ? textNode(n) : element(n);
   }
+  // Release notes come from GitHub in Vietnamese: a line the dictionary doesn't have is hidden in English,
+  // and a release left with no line says so, so the page never mixes the two languages (owner 31/10).
+  const VI = /[ăâđêôơưàảãáạằẳẵắặầẩẫấậèẻẽéẹềểễếệìỉĩíịòỏõóọồổỗốộờởỡớợùủũúụừửữứựỳỷỹýỵ]/i;
+  function changelog() {
+    for (const li of document.querySelectorAll("#log li")) li.hidden = lang === "en" && VI.test(li.textContent);
+    for (const a of document.querySelectorAll("#log .rel")) {
+      let note = a.querySelector(".nc-en-note");
+      const empty = lang === "en" && a.querySelector("li") && !a.querySelector("li:not([hidden])");
+      if (empty && !note) {
+        note = document.createElement("p");
+        note.className = "nc-en-note";
+        note.style.color = "var(--sub)";
+        note.textContent = "Release notes for this version are in Vietnamese.";
+        a.appendChild(note);
+      } else if (!empty && note) note.remove();
+    }
+  }
   const mo = new MutationObserver(ms => {
     if (lang !== "en") return;
     for (const m of ms) {
       if (m.type === "characterData") textNode(m.target);
       else m.addedNodes.forEach(walk);
     }
+    if (ms.some(m => m.target.closest?.("#log") || m.target.id === "log")) changelog();
   });
 
   const metas = [...document.querySelectorAll('meta[name="description"], meta[property^="og:"], meta[name^="twitter:"]')];
@@ -413,6 +464,7 @@
       for (const m of metas) if (m.dataset.vi) m.content = m.dataset.vi;
       if (document.documentElement.dataset.ncTitle) document.title = document.documentElement.dataset.ncTitle;
     }
+    changelog();
     const b = document.getElementById("langBtn");
     if (b) { b.textContent = l === "en" ? "VI" : "EN"; b.title = l === "en" ? "Tiếng Việt" : "English"; b.setAttribute("aria-label", b.title); }
   }

@@ -223,7 +223,11 @@ section{padding:110px 0;position:relative}
 /* real photo */
 .real{display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:center}
 .real figure{border-radius:var(--r);overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 80px rgba(0,0,0,.5)}
-.real figcaption{font-size:13px;color:var(--dim);padding:10px 14px;background:var(--card)}
+.real figcaption,.real2 figcaption{font-size:13px;color:var(--dim);padding:10px 14px;background:var(--card)}
+.real2{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:40px}
+.real2 figure{border-radius:var(--r);overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 80px rgba(0,0,0,.5)}
+.real2 img{display:block;width:100%;height:auto}
+@media(max-width:700px){.real2{grid-template-columns:1fr}}
 @media(max-width:900px){.real{grid-template-columns:1fr}}
 
 /* install */
@@ -436,7 +440,7 @@ footer .legal{max-width:560px}
     <div class="bento">
       <div class="tile w6 glow reveal">
         <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 9a15 15 0 0 1 20 0"/><path d="M5.5 12.5a10 10 0 0 1 13 0"/><path d="M9 16a5 5 0 0 1 6 0"/><circle cx="12" cy="19.5" r="1"/></svg></div>
-        <h3>TMAX 560 · Tracer 9 <span class="badge">BẢN TỚI</span></h3>
+        <h3>TMAX 560 · Tracer 9 <span class="badge">MỚI · THỬ NGHIỆM</span></h3>
         <p>Cùng một app NConnect, cùng mọi tính năng trên điện thoại. Đồng hồ của TMAX và Tracer nhận hình qua Wi-Fi của xe hoặc cáp USB, nên bản đồ mượt tới 30 khung mỗi giây.</p>
         <ul>
           <li>Chọn loại xe TMAX / Tracer 9 lúc cài, nhập mã PIN đang hiện trên đồng hồ một lần</li>
@@ -570,6 +574,10 @@ footer .legal{max-width:560px}
       <p class="lead">Không lắp thêm phần cứng, không can thiệp vào xe. NConnect dùng đúng kết nối Bluetooth mà Yamaha thiết kế cho bản đồ Garmin, nên đồng hồ hiển thị như đồ chính hãng: nút zoom, ô tốc độ, thanh tên đường. Với TMAX, Tracer 9, NConnect dùng Wi-Fi và cổng USB có sẵn của xe như ứng dụng MyRide-Link.</p>
     </div>
   </div>
+  <div class="wrap real2">
+    <figure class="reveal"><img src="assets/tmax-map.webp" alt="Đồng hồ TMAX 560 thật đang dẫn đường bằng NConnect" loading="lazy"><figcaption>TMAX 560 thật: NConnect dẫn đường trên đồng hồ qua Wi-Fi của xe.</figcaption></figure>
+    <figure class="reveal"><img src="assets/tmax-aa.webp" alt="Android Auto trên đồng hồ TMAX 560 thật" loading="lazy"><figcaption>TMAX 560 thật: Android Auto trên đồng hồ.</figcaption></figure>
+  </div>
 </section>
 
 <section id="cai-dat" style="background:var(--bg2)">
@@ -600,7 +608,7 @@ footer .legal{max-width:560px}
     </div>
     <div class="reveal">
       <h3 style="margin-top:56px;font-size:20px">Dùng được với</h3>
-      <div class="bikes"><span>Yamaha XMAX 300</span><span>Yamaha NMAX 155</span><span>YZF-R9 <em>2025+</em></span><span>MT-09 / MT-09 SP <em>2024+</em></span><span>XSR900 GP</span><span>Yamaha TMAX 560 <em>bản tới</em></span><span>Tracer 9 <em>bản tới</em></span></div>
+      <div class="bikes"><span>Yamaha XMAX 300</span><span>Yamaha NMAX 155</span><span>YZF-R9 <em>2025+</em></span><span>MT-09 / MT-09 SP <em>2024+</em></span><span>XSR900 GP</span><span>Yamaha TMAX 560 <em>thử nghiệm</em></span><span>Tracer 9 <em>thử nghiệm</em></span></div>
       <p class="hint" style="text-align:left;margin-top:12px">Các dòng Yamaha có màn TFT hỗ trợ Garmin StreetCross (Bluetooth) hoặc MyRide-Link (Wi-Fi / USB) đều có khả năng kết nối.</p>
     </div>
   </div>
@@ -626,7 +634,7 @@ footer .legal{max-width:560px}
       <details><summary>Có tốn pin, nóng máy không?</summary><p>GPS mới là thứ tốn pin, bản đồ thì gần như không. Bật Tiết kiệm pin (ngay trên đồng hồ: giữ ✓ 1,5 giây → Yêu thích) để tắt GPS mà vẫn giữ các màn hình. Dẫn đường sẽ tự bật lại GPS khi cần.</p></details>
       <details><summary>Điện thoại khoá màn hình có chạy không?</summary><p>Có. NConnect chạy nền, tự kết nối khi bật xe. Cần cấp quyền Vị trí "Luôn cho phép" và tắt tối ưu pin, nhất là trên máy OPPO, Xiaomi, vivo, Samsung.</p></details>
       <details><summary>Giới hạn tốc độ và camera có chính xác không?</summary><p>Đi qua biển giới hạn tốc độ có trong dữ liệu thì đồng hồ báo theo biển đó; camera là dữ liệu tham khảo, tải theo khu vực bạn đi. Đường đã có biển trên bản đồ thì dùng biển đó. Đường chưa có biển thì đây là ước tính theo Thông tư 38/2024/TT-BGTVT dựa trên loại đường, khu dân cư và dải phân cách. Đôi khi không khớp biển thật, luôn đi theo biển báo thực tế.</p></details>
-      <details><summary>TMAX, Tracer 9 khác XMAX ở đâu?</summary><p>XMAX, NMAX nhận bản đồ qua Bluetooth, vài khung mỗi giây. TMAX 560 và Tracer 9 nhận qua Wi-Fi của xe hoặc cáp USB nên hình mượt tới 30 khung mỗi giây; khi nối Wi-Fi xe, điện thoại vẫn dùng 4G / 5G. Tính năng trên điện thoại, mã kích hoạt và sao lưu dùng chung một app. TMAX, Tracer 9 có từ bản tiếp theo, hiện chỉ trên Android.</p></details>
+      <details><summary>TMAX, Tracer 9 khác XMAX ở đâu?</summary><p>XMAX, NMAX nhận bản đồ qua Bluetooth, vài khung mỗi giây. TMAX 560 và Tracer 9 nhận qua Wi-Fi của xe hoặc cáp USB nên hình mượt tới 30 khung mỗi giây; khi nối Wi-Fi xe, điện thoại vẫn dùng 4G / 5G. Tính năng trên điện thoại, mã kích hoạt và sao lưu dùng chung một app. TMAX, Tracer 9 có từ bản 0.8.8 (thử nghiệm), hiện chỉ trên Android.</p></details>
       <details><summary>iPhone khác Android ở đâu?</summary><p>iPhone cài bằng file IPA, chưa có trên App Store. Bản đồ trên đồng hồ dùng OpenFreeMap hoặc VietMap; thông báo do iPhone tự chia sẻ cho xe qua Bluetooth. Phiên bản iPhone luôn cùng số với Android. TMAX, Tracer 9 hiện chỉ có trên Android.</p></details>
       <details><summary>Quãng đường còn đi được tính thế nào?</summary><p>Xe không báo mức xăng trong bình, chỉ báo lượng xăng đã phun. Sau khi bạn bấm "Vừa đổ đầy", NConnect lấy dung tích bình trừ lượng xăng đã dùng, nhân với mức tiêu hao của bạn trong 30 ngày gần nhất. Đổ không đầy hoặc quên bấm thì số sẽ lệch.</p></details>
       <details><summary>Có ảnh hưởng tới xe hay bảo hành không?</summary><p>NConnect chỉ kết nối Bluetooth, Wi-Fi hoặc USB như app chính hãng, không ghi gì vào xe, không cần lắp thêm phần cứng. NConnect không liên kết với Yamaha hay Garmin.</p></details>

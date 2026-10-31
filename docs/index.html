@@ -753,7 +753,7 @@ footer .legal{max-width:560px}
   const fmtDate = d => new Date(d).toLocaleDateString("vi-VN", { day: "2-digit", month: "2-digit", year: "numeric" });
   // All pages of releases, kept in localStorage for 30 min: without a key GitHub allows 60 calls / hour per IP.
   // A failed call falls back to the last copy we had; with no copy at all the catch below keeps the plain text.
-  const REL_KEY = "nc-releases-v1", REL_TTL = 30 * 60 * 1000;
+  const REL_KEY = "nc-releases-v2", REL_TTL = 30 * 60 * 1000;
   const readCache = () => { try { return JSON.parse(localStorage.getItem(REL_KEY)); } catch (e) { return null; } };
   const slim = list => list.filter(r => !r.draft).map((r, i) => ({ tag_name: r.tag_name, name: r.name, published_at: r.published_at,
     body: i < 4 ? r.body : "", assets: r.assets.map(a => ({ name: a.name, browser_download_url: a.browser_download_url, download_count: a.download_count })) }));
@@ -777,8 +777,11 @@ footer .legal{max-width:560px}
     return fetchReleases().catch(err => { if (c && Array.isArray(c.list) && c.list.length) return c.list; throw err; });
   }
   const fmtNum = n => n.toLocaleString("vi-VN");
+  // Releases before 0.8.7 were made drafts on 31/10 (owner: old builds may leak API keys). The public API no
+  // longer lists them and they can't be downloaded, so their final counts are kept here.
+  const ARCHIVED = { android: 1413, ios: 338 };
   function showDownloads(pub) {
-    let android = 0, ios = 0;
+    let android = ARCHIVED.android, ios = ARCHIVED.ios;
     pub.forEach(r => r.assets.forEach(a => {
       const n = Number(a.download_count);
       if (!Number.isFinite(n)) return;

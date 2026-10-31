@@ -74,7 +74,9 @@ section{padding:110px 0;position:relative}
 .btn-ghost:hover{background:rgba(255,255,255,.1)}
 .btn svg{width:20px;height:20px;flex:none}
 .nav .btn{padding:10px 18px;font-size:14px}
-@media(max-width:860px){.nav-links{display:none}.nav .btn{margin-left:auto;padding:9px 14px;font-size:13.5px}.nav .wrap{gap:12px}}
+.lang-btn{font:inherit;font-size:13px;font-weight:700;letter-spacing:.04em;color:var(--sub);background:rgba(255,255,255,.06);border:1px solid var(--line);border-radius:999px;padding:8px 12px;cursor:pointer}
+.lang-btn:hover{color:var(--text)}
+@media(max-width:860px){.nav-links{display:none}.nav .btn{margin-left:auto;padding:9px 14px;font-size:13.5px}.nav .wrap{gap:12px}.lang-btn{margin-left:auto}.nav .lang-btn+.btn{margin-left:0}}
 
 /* hero */
 .hero{padding:52px 0 70px;min-height:calc(100vh - 68px);display:flex;align-items:center;overflow:hidden}
@@ -290,6 +292,7 @@ footer .legal{max-width:560px}
       <a href="#cap-nhat">Cập nhật</a>
       <a href="#hoi-dap">Hỏi đáp</a>
     </div>
+    <button class="lang-btn" id="langBtn" type="button" title="English" aria-label="English">EN</button>
     <a class="btn btn-red dl-primary" href="#cai-dat" data-dl>Tải NConnect</a>
   </div>
 </nav>
@@ -978,5 +981,6 @@ footer .legal{max-width:560px}
   setScreen(0, 0);
 })();
 </script>
+<script src="assets/en.js"></script>
 </body>
 </html>

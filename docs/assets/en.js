@@ -92,8 +92,8 @@
     "Zalo, Messenger… hiện ngay trên bản đồ và trong Trung tâm thông tin. Cuộc gọi thường và cuộc gọi Zalo, Messenger: nghe hoặc từ chối bằng nút trên tay lái. Tự chọn app nào được gửi thông báo.":
       "Zalo, Messenger… show right on the map and in the Info centre. Phone, Zalo and Messenger calls: answer or decline with the handlebar buttons. You choose which apps may send notifications.",
     "Màn hình chức năng": "Info screens",
-    "Trung tâm thông tin, Âm nhạc (ảnh bìa, bài tiếp, bài trước, âm lượng), trình chiếu ảnh của bạn. Ô nhạc mini đổi được thành lời chào kèm thời tiết.":
-      "Info centre, Music (cover art, next, previous, volume), a slideshow of your photos. The mini music box can become a greeting with the weather.",
+    "Trung tâm thông tin, Âm nhạc (ảnh bìa, bài tiếp, bài trước, âm lượng), trình chiếu ảnh của bạn. Ô nhạc mini đổi được thành lời chào kèm thời tiết. Tự chọn thông số trên các ô: ắc quy, nước mát, xăng tức thời, xăng trung bình, ODO, xăng còn lại, km còn đi được.":
+      "Info centre, Music (cover art, next, previous, volume), a slideshow of your photos. The mini music box can become a greeting with the weather. Choose the figures in the boxes: battery, coolant, instant fuel use, average fuel use, ODO, fuel left, range.",
     "Biển tốc độ và camera": "Speed signs and cameras",
     "Đi qua biển giới hạn nào (đúng chiều xe chạy, có cả biển của Sở GTVT TP.HCM), đồng hồ báo theo biển đó. Camera CSGT, camera AI và camera bắn tốc độ phía trước hiện kèm khoảng cách khi còn dưới 350 m. Đường chưa có biển thì ước tính theo":
       "Pass a speed-limit sign (in your direction, including the HCMC Department of Transport's signs) and the dash follows it. Traffic-police, AI and speed cameras ahead show with the distance when under 350 m. Roads with no sign get an estimate under",
@@ -133,8 +133,8 @@
     "Sao lưu cài đặt, địa điểm, hồ sơ xe, các chuyến đi vào Zalo, Telegram hoặc tự lưu mỗi tuần; đổi máy là khôi phục lại. Chọn bộ nút LÊN / XUỐNG: bấm đúp để phóng to bản đồ hoặc chuyển bài.":
       "Back up settings, places, bike profile and rides to Zalo, Telegram or a weekly automatic save; restore on a new phone. Pick an UP / DOWN button set: double-press to zoom the map or skip songs.",
     "Khoe chuyến đi": "Show off your ride",
-    "Thời gian tăng tốc 0–60 và 0–100 km/h của từng chuyến. Tạo ảnh chia sẻ kiểu app chạy bộ: nền bản đồ có tuyến đường, hoặc ảnh của bạn kèm bản đồ nhỏ, tự chọn thông số, khung bài đăng hoặc story. Biển số và ODO không bao giờ hiện trên ảnh.":
-      "0–60 and 0–100 km/h times for each ride. Share images like a running app: a map with the route, or your photo with a small map, your choice of stats, post or story format. Plate and ODO never appear on the image.",
+    "Thời gian tăng tốc 0–60 và 0–100 km/h của từng chuyến. Tạo ảnh chia sẻ kiểu app chạy bộ: nền bản đồ có tuyến đường, hoặc ảnh của bạn kèm bản đồ nhỏ, tự chọn thông số, khung bài đăng hoặc story. Ghép nhiều chuyến thành một ảnh tổng hợp, ví dụ chuyến đi nhiều ngày. Biển số và ODO không bao giờ hiện trên ảnh.":
+      "0–60 and 0–100 km/h times for each ride. Share images like a running app: a map with the route, or your photo with a small map, your choice of stats, post or story format. Merge several rides into one combined picture, for a trip of several days. Plate and ODO never appear on the image.",
     "Android Auto trên đồng hồ": "Android Auto on the dash",
     "ĐANG PHÁT TRIỂN": "IN DEVELOPMENT",
     "Đưa Android Auto lên màn TFT zin: Google Maps, Waze, nhạc… điều khiển bằng cùm công tắc. Menu đồng hồ mở dẫn đường Về nhà, Đi làm, Trạm xăng; Yêu thích có Trợ lý Google, Bản đồ, Nhạc, Bài đang phát, Zoom bản đồ.":
@@ -288,6 +288,21 @@
     "Các dòng Yamaha có màn TFT hỗ trợ Garmin StreetCross (Bluetooth) hoặc MyRide-Link (Wi-Fi / USB) đều có khả năng kết nối.": "Yamaha models with a TFT dash that supports Garmin StreetCross (Bluetooth) or MyRide-Link (Wi-Fi / USB) can likely connect.",
     "NConnect · Bản đồ lên đồng hồ Yamaha XMAX, NMAX, MT-09, TMAX, Tracer": "NConnect · Maps on the Yamaha XMAX, NMAX, MT-09, TMAX, Tracer dash",
     "Cho Yamaha XMAX 300 · NMAX 155 · MT-09 · TMAX 560 · Tracer 9": "For Yamaha XMAX 300 · NMAX 155 · MT-09 · TMAX 560 · Tracer 9",
+    "THỬ NGHIỆM": "TRIAL",
+    "Tracer 9 đã chạy thật trên xe, cả bản GT+; TMAX 560 còn thử nghiệm": "Tracer 9 is tested on the bike, GT+ too; the TMAX 560 is still a trial",
+    "Tracer 9 / Tracer 9 GT+": "Tracer 9 / Tracer 9 GT+",
+    "đã chạy thật": "tested on the bike",
+    "Tour": "Tours",
+    "Tạo chuyến đi với điểm xuất phát, điểm đến, giờ đi, liên hệ. Anh em trong 50 km thấy và join, Android và iPhone dùng chung.": "Post a ride with its start, destination, time and contact. Riders within 50 km see it and join, on Android and iPhone alike.",
+    "Từ 1 tiếng trước giờ đi app tự vào nhóm của tour để thấy vị trí của nhau": "From 1 hour before the start the app joins the tour's group so you see each other",
+    "Android: báo cho chủ tour khi có người join, báo thành viên khi tour huỷ": "Android: the organiser is told when someone joins, members when a tour is cancelled",
+    "Giọng nói tiếng Việt": "Vietnamese voice",
+    "Đọc qua tai nghe hoặc loa điện thoại, bật tắt từng nhóm trong Cài đặt.": "Speaks through the headset or the phone's speaker, each group switched in Settings.",
+    "Hướng rẽ, đọc đủ tên đường thay vì chữ viết tắt": "Turns, with street names in full instead of short forms",
+    "Camera bắn tốc độ phía trước, chạy quá tốc độ": "Speed cameras ahead, riding over the limit",
+    "Giới hạn tốc độ khi đổi đường, kể cả khi không có biển": "The speed limit when it changes, even with no sign",
+    "Lịch sử từng lần thay với ngày và ODO, thêm được các lần đã thay trước đây": "A history of each change with date and ODO, earlier ones can be added",
+    "Thêm mục của riêng bạn: lốp, má phanh, dầu phanh...": "Add items of your own: tyres, brake pads, brake fluid...",
     "2024+ · đã chạy thật": "2024+ · tested on the bike",
     "Các dòng Yamaha có màn TFT hỗ trợ Garmin StreetCross (Bluetooth) hoặc MyRide-Link (Wi-Fi / USB) đều có khả năng kết nối. MT-09, R9, XSR900 GP dùng cùng cách với XMAX, NMAX: trong app chọn đồng hồ XMAX / NMAX.": "Yamaha models with a TFT dash that supports Garmin StreetCross (Bluetooth) or MyRide-Link (Wi-Fi / USB) should be able to connect. The MT-09, R9 and XSR900 GP work the same way as the XMAX and NMAX: in the app pick the XMAX / NMAX dash.",
     "Đồng hồ Yamaha MT-09 thật đang dẫn đường bằng NConnect": "A real Yamaha MT-09 dash navigating with NConnect",

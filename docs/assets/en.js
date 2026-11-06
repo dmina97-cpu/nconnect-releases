@@ -5,6 +5,7 @@
    VI / EN button or ?lang=en picks English and the choice is remembered. */
 (() => {
   const EN = {
+    "Cho xe Yamaha và Zontes · Android · iPhone": "For Yamaha and Zontes bikes · Android · iPhone",
     "Xe nào cũng nối dễ.": "Every bike connects easily.",
     "Chọn dòng xe trong app, làm theo vài bước một lần. Từ lần sau bật xe là bản đồ tự lên, điện thoại cứ để trong túi hoặc cốp.": "Pick your bike in the app and follow a few steps once. After that the map comes up when you switch the bike on, with the phone left in your pocket or under the seat.",
     "Yamaha XMAX · NMAX · MT-09 · R9": "Yamaha XMAX · NMAX · MT-09 · R9",

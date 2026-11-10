@@ -841,7 +841,7 @@ footer .legal{max-width:560px}
   const fmtNum = n => n.toLocaleString("vi-VN");
   // Releases before 0.8.7 were made drafts on 31/10 (owner: old builds may leak API keys). The public API no
   // longer lists them and they can't be downloaded, so their final counts are kept here.
-  const ARCHIVED = { android: 3518, ios: 1124 };
+  const ARCHIVED = { android: 3528, ios: 1127 };
   function showDownloads(pub) {
     let android = ARCHIVED.android, ios = ARCHIVED.ios;
     pub.forEach(r => r.assets.forEach(a => {

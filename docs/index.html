@@ -240,6 +240,15 @@ section{padding:110px 0;position:relative}
 .install .n{font-family:"JetBrains Mono",monospace;font-size:13px;color:var(--red2);font-weight:700}
 .install h3{font-size:18px;margin:8px 0 6px}
 .install p{color:var(--sub);font-size:14.5px}
+.ways{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:26px}
+.way{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:22px}
+.way h3{font-size:18px;margin:0 0 2px}
+.way .price{color:var(--red2);font-weight:700;font-size:15px;margin-bottom:8px}
+.way p{color:var(--sub);font-size:14.5px}
+.way a,.modal .way-line a{color:var(--red);font-weight:600}
+.way a{display:inline-block;margin-top:10px}
+.modal .way-line{display:block;margin-top:8px}
+@media(max-width:620px){.ways{grid-template-columns:1fr}}
 .pane{display:none}.pane.on{display:block}
 @media(max-width:900px){.install{grid-template-columns:1fr 1fr}}
 @media(max-width:560px){.install{grid-template-columns:1fr}}
@@ -615,14 +624,18 @@ footer .legal{max-width:560px}
       <div class="cta" style="margin-top:26px"><a class="btn btn-red" id="dlApk" data-dl href="https://github.com/dmina97-cpu/nconnect-releases/releases/latest">Tải APK cho Android</a></div>
     </div>
     <div class="pane" id="pane-ios">
+      <div class="ways reveal">
+        <div class="way"><h3>Cách 1: Cài qua máy tính</h3><div class="price">Miễn phí</div><p>Dùng Sideloadly trên máy tính. Cứ 7 ngày phải cài lại 1 lần, và lần nào cũng cần máy tính.</p><a href="https://www.youtube.com/watch?v=r5UW4oY0Sx4" target="_blank" rel="noopener">Xem video cài qua máy tính ›</a></div>
+        <div class="way"><h3>Cách 2: Cài trực tiếp trên điện thoại</h3><div class="price">59.000đ một năm</div><p>Dùng chứng chỉ trả phí, cài ngay trên iPhone, không cần máy tính.</p><a href="https://www.youtube.com/watch?v=2IMK44rT-Lg" target="_blank" rel="noopener">Xem video cài trực tiếp trên điện thoại ›</a></div>
+      </div>
       <div class="install reveal">
         <div class="s"><div class="n">01</div><h3>Tải IPA</h3><p>NConnect cho iPhone chưa có trên App Store, cần tự cài file IPA.</p></div>
-        <div class="s"><div class="n">02</div><h3>Cài bằng máy tính</h3><p>Dùng AltStore, Sideloadly hoặc công cụ tương tự. <a href="https://www.youtube.com/watch?v=r5UW4oY0Sx4" target="_blank" rel="noopener" style="color:var(--red);font-weight:600">Xem video hướng dẫn cài bằng máy tính ›</a></p></div>
+        <div class="s"><div class="n">02</div><h3>Cài vào iPhone</h3><p>Chọn Cách 1 hoặc Cách 2 ở trên rồi làm theo video.</p></div>
         <div class="s"><div class="n">03</div><h3>Cấp quyền</h3><p>Bluetooth, Vị trí "Luôn luôn". Bật "Chia sẻ thông báo hệ thống" cho xe trong Cài đặt Bluetooth để nhận thông báo.</p></div>
         <div class="s"><div class="n">04</div><h3>Kết nối</h3><p>Bật xe, kết nối lần đầu. Bản iPhone có bản đồ, dẫn đường, Trạm xăng, biển tốc độ và camera, xăng còn bao nhiêu km, đi nhóm, thông số xe, bảo dưỡng, chuyến đi; app tự báo khi có bản mới.</p></div>
       </div>
       <div class="cta" style="margin-top:26px"><a class="btn btn-red" id="dlIpa" data-dl href="https://github.com/dmina97-cpu/nconnect-releases/releases/latest">Tải IPA cho iPhone</a></div>
-      <p class="ipa-note">Trên iPhone, file IPA được lưu vào app Tệp (Files). iPhone không cài trực tiếp được, cần cài bằng AltStore / Sideloadly như bước 02.</p>
+      <p class="ipa-note">Cách 1 nên tải IPA trên máy tính. Trên iPhone, file IPA được lưu vào app Tệp (Files).</p>
     </div>
     <div class="reveal">
       <h3 style="margin-top:56px;font-size:20px">Dùng được với</h3>
@@ -720,10 +733,12 @@ footer .legal{max-width:560px}
     </div>
     <div id="dlIos" hidden>
       <ol>
-        <li class="key"><span>NConnect cho iPhone <b>chưa có trên App Store</b>, cần cài file IPA <b>bằng máy tính</b> (Sideloadly, AltStore…). <a href="https://www.youtube.com/watch?v=r5UW4oY0Sx4" target="_blank" rel="noopener" style="color:var(--red);font-weight:600">Xem video hướng dẫn cài bằng máy tính ›</a></span></li>
-        <li><span>Bấm <b>Tải IPA</b> bên dưới (nên tải trên máy tính, hoặc lưu vào app Tệp).</span></li>
-        <li><span>Cài xong: <b>Cài đặt → Cài đặt chung → Quản lý VPN &amp; thiết bị</b> → chọn Apple ID của bạn → <b>Tin cậy</b>.</span></li>
-        <li><span>iOS 16 trở lên: <b>Cài đặt → Quyền riêng tư &amp; Bảo mật → Chế độ nhà phát triển</b> → bật, máy khởi động lại.</span></li>
+        <li class="key"><span>NConnect cho iPhone <b>chưa có trên App Store</b>, chọn 1 trong 2 cách cài file IPA:
+          <span class="way-line"><b>Cách 1, miễn phí:</b> cài qua máy tính bằng Sideloadly, cứ 7 ngày phải cài lại 1 lần. <a href="https://www.youtube.com/watch?v=r5UW4oY0Sx4" target="_blank" rel="noopener">Xem video cài qua máy tính ›</a></span>
+          <span class="way-line"><b>Cách 2, 59.000đ một năm:</b> dùng chứng chỉ trả phí, cài trực tiếp trên điện thoại, không cần máy tính. <a href="https://www.youtube.com/watch?v=2IMK44rT-Lg" target="_blank" rel="noopener">Xem video cài trực tiếp trên điện thoại ›</a></span></span></li>
+        <li><span>Bấm <b>Tải IPA</b> bên dưới (Cách 1 nên tải trên máy tính, hoặc lưu vào app Tệp).</span></li>
+        <li><span>Cách 1, cài xong: <b>Cài đặt → Cài đặt chung → Quản lý VPN &amp; thiết bị</b> → chọn Apple ID của bạn → <b>Tin cậy</b>.</span></li>
+        <li><span>Cách 1, iOS 16 trở lên: <b>Cài đặt → Quyền riêng tư &amp; Bảo mật → Chế độ nhà phát triển</b> → bật, máy khởi động lại.</span></li>
         <li><span>Mở NConnect, cho phép Bluetooth và Vị trí "Luôn luôn". Apple ID miễn phí cần cài lại sau 7 ngày.</span></li>
       </ol>
     </div>
@@ -768,7 +783,7 @@ footer .legal{max-width:560px}
     $("#dlAndroid").hidden = os !== "android"; $("#dlIos").hidden = os !== "ios";
     $("#dlGo").href = links[os];
     $("#dlGo").textContent = (os === "ios" ? "Tải IPA cho iPhone" : "Tải APK cho Android") + (relVersion ? " · " + relVersion : "");
-    $("#dlFine").textContent = os === "ios" ? "File khoảng 6 MB · tải trên máy tính để cài bằng Sideloadly / AltStore" : "File khoảng 46 MB · miễn phí";
+    $("#dlFine").textContent = os === "ios" ? "File khoảng 6 MB · cài theo Cách 1 hoặc Cách 2 ở trên" : "File khoảng 46 MB · miễn phí";
   }
   function openDl(os) { setOs(os); modal.classList.add("open"); document.body.style.overflow = "hidden"; }
   function closeDl() { modal.classList.remove("open"); document.body.style.overflow = ""; }

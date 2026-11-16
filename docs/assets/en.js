@@ -328,6 +328,11 @@
     "Miễn phí cho Android và iPhone.": "Free for Android and iPhone.",
     "Kênh Zalo nhận tin cập nhật": "Zalo channel for updates",
     "Nhóm chat cộng đồng": "Community chat group",
+    "Tham gia cộng đồng NConnect": "Join the NConnect community",
+    "Cộng đồng NConnect": "NConnect community",
+    "Nhóm chat Zalo": "Zalo chat group",
+    "Kênh tin Zalo": "Zalo news",
+    "Discord quốc tế": "Discord (international)",
     "Cộng đồng Discord (quốc tế)": "Discord community (international)",
     "© 2026 Phạm Nam 22s. NConnect là phần mềm độc quyền: nghiêm cấm dịch ngược, trích xuất, sao chép hoặc phân phối lại khi chưa được tác giả đồng ý bằng văn bản. NConnect không liên kết với Yamaha Motor hay Garmin. Bản đồ © Google, © VietMap, © OpenStreetMap.":
       "© 2026 Phạm Nam 22s. NConnect is proprietary software: reverse engineering, extracting, copying or redistributing it without the author's written consent is prohibited. NConnect is not affiliated with Yamaha Motor or Garmin. Maps © Google, © VietMap, © OpenStreetMap.",

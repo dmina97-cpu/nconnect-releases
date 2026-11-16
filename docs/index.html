@@ -98,6 +98,13 @@ section{padding:120px 0;position:relative}
 .guide-link:hover{text-decoration-color:currentColor}
 
 /* nav: the frosted layer fades in under it once the page scrolls */
+.community{background:var(--bg2);border-bottom:1px solid var(--line);font-size:14px}
+.community .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:6px 18px;padding-top:9px;padding-bottom:9px}
+.community .lbl{color:var(--sub);font-weight:600}
+.community a{color:var(--text);font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:7px;min-height:30px}
+.community a::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--red)}
+.community a:hover,.community a:focus-visible{color:var(--red-ink);text-decoration:underline}
+@media (max-width:560px){.community{font-size:13px}.community .lbl{display:none}.community .wrap{gap:4px 14px}}
 .nav{position:sticky;top:0;z-index:50}
 .nav::before{content:"";position:absolute;inset:0;background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(14px) saturate(1.4);-webkit-backdrop-filter:blur(14px) saturate(1.4);border-bottom:1px solid var(--line);opacity:0;transition:opacity .25s var(--ease-out)}
 .nav.solid::before{opacity:1}
@@ -383,6 +390,15 @@ footer .legal{max-width:580px}
 <body>
 
 <div class="inapp" id="inapp">Bạn đang mở trang trong <span id="inappName">ứng dụng</span>, ở đây <b>không tải được file</b>. Bấm <b>⋯</b> (góc trên) → <b>Mở bằng trình duyệt</b> (Safari / Chrome) rồi tải lại.</div>
+<div class="community" aria-label="Cộng đồng NConnect">
+  <div class="wrap">
+    <span class="lbl">Tham gia cộng đồng NConnect</span>
+    <a href="https://zalo.me/g/nysckfvvrqo3xrbhptdg">Nhóm chat Zalo</a>
+    <a href="https://zalo.me/g/grxzrvbd5meiwxff3znz">Kênh tin Zalo</a>
+    <a href="https://discord.gg/pXWQtGQHtd" target="_blank" rel="noopener">Discord quốc tế</a>
+  </div>
+</div>
+
 <nav class="nav" id="nav">
   <div class="wrap">
     <a class="brand" href="#"><img src="assets/logo.webp" alt="">NConnect</a>

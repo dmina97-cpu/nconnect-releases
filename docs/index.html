@@ -240,9 +240,9 @@ section{padding:120px 0;position:relative}
 .boot .live,.boot .hint,.boot .group-wrap{animation:fadeOn .4s ease-out 1.15s both}
 
 /* connect: three bikes, three equal choices, so here (and only here) they are panels */
-.bento{display:grid;grid-template-columns:repeat(6,1fr);gap:48px 36px;margin-top:56px}
-.tile{grid-column:span 2;position:relative;min-width:0;padding-top:24px;border-top:1px solid var(--line)}
-.tile.w3{grid-column:span 3}.tile.w4{grid-column:span 4}.tile.w6{grid-column:span 6}
+.bento{display:grid;grid-template-columns:repeat(12,1fr);gap:56px 40px;margin-top:56px}
+.tile{grid-column:span 4;position:relative;min-width:0;padding-top:24px;border-top:1px solid var(--line);display:flex;flex-direction:column}
+.tile.w3{grid-column:span 6}.tile.w4{grid-column:span 8}.tile.w6{grid-column:span 12}
 .tile .ico{width:38px;height:38px;border-radius:11px;display:grid;place-items:center;margin-bottom:16px;background:var(--red-soft);color:var(--red-ink)}
 .tile .ico svg{width:21px;height:21px}
 .tile h3{font-size:20px;margin-bottom:8px}
@@ -250,15 +250,23 @@ section{padding:120px 0;position:relative}
 .tile ul{list-style:none;margin-top:12px;display:grid;gap:7px}
 .tile li{color:var(--sub);font-size:15px;padding-left:20px;position:relative}
 .tile li::before{content:"";position:absolute;left:1px;top:.78em;width:9px;height:2px;border-radius:2px;background:var(--red)}
-.tile .shot{margin-top:22px;border-radius:var(--r-md);overflow:hidden;background:#000;box-shadow:0 0 0 1px var(--line),0 24px 50px -28px rgba(10,12,18,.5)}
-.tile .shot img{width:100%;height:auto}
+/* Every picture in one 2:1 frame at the foot of its tile, so tiles side by side line up (owner 16/11: "cân đối"). */
+.tile>.shot{margin-top:auto}
+.tile>:not(.shot):has(+ .shot){margin-bottom:24px}
+.tile .shot{aspect-ratio:2/1;border-radius:var(--r-md);overflow:hidden;background:#05070a;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 1px var(--line),0 24px 50px -28px rgba(10,12,18,.5)}
+.tile .shot img{width:100%;height:100%;object-fit:contain}
+/* Phone screenshots: the phone rises from the foot of the frame. */
+.tile .shot.app{align-items:flex-start;padding-top:22px;background:radial-gradient(120% 100% at 50% 110%,#3a1518,#0b0d12 72%)}
+.tile .shot.app img{width:40%;height:auto;object-fit:initial;border-radius:18px 18px 0 0;box-shadow:0 0 0 1px rgba(255,255,255,.1),0 24px 48px -12px rgba(0,0,0,.7)}
+.tile:not(.w3):not(.w4):not(.w6) .shot.app img{width:56%}
+@media(max-width:640px){.tile .shot.app img,.tile:not(.w3):not(.w4):not(.w6) .shot.app img{width:58%}}
 .tile.w4 h3{font-size:clamp(22px,2.2vw,28px)}
 #ket-noi .bento{gap:20px}
 #ket-noi .tile{background:var(--card);border:1px solid var(--line);border-radius:var(--r-lg);padding:28px 26px}
 .badge{display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.04em;padding:3px 9px;border-radius:999px;background:var(--amber-soft);color:var(--amber);margin-left:8px;vertical-align:middle}
 .law{display:flex;gap:16px;align-items:center;margin-top:16px}
 .sign{width:64px;height:64px;border-radius:50%;background:#fff;border:7px solid #d92b2b;display:grid;place-items:center;color:#111;font-weight:800;font-size:24px;flex:none}
-@media(max-width:980px){.tile,.tile.w3,.tile.w4{grid-column:span 3}}
+@media(max-width:980px){.tile,.tile.w3,.tile.w4{grid-column:span 6}}
 @media(max-width:640px){.bento{grid-template-columns:1fr;gap:36px}.tile,.tile.w3,.tile.w4,.tile.w6{grid-column:span 1}#ket-noi .tile{padding:24px 20px}}
 
 .share-real{max-width:300px;margin-left:auto;margin-right:auto}
@@ -555,7 +563,7 @@ footer .legal{max-width:580px}
       <p class="lead">Bản đồ, dẫn đường cho xe máy, thông báo, nhạc, thông số xe, đi nhóm… chạy như nhau trên mọi dòng xe được hỗ trợ, cả Android và iPhone.</p>
     </div>
     <div class="bento">
-      <div class="tile w4 glow">
+      <div class="tile w3 glow">
         <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6l6-3 6 3 6-3v15l-6 3-6-3-6 3z"/><path d="M9 3v15M15 6v15"/></svg></div>
         <h3>Bản đồ thật trên đồng hồ</h3>
         <p>Google Maps (giao thông, vệ tinh, nhà 3D, góc nghiêng) hoặc VietMap, vẽ đúng cỡ chữ trên mọi điện thoại.</p>
@@ -569,13 +577,14 @@ footer .legal{max-width:580px}
         </ul>
         <div class="shot"><img src="assets/screen-mapinfo.webp" alt="Bản đồ kèm ô lời chào, thời tiết, ắc quy, nước mát trên đồng hồ" loading="lazy"></div>
       </div>
-      <div class="tile">
+      <div class="tile w3">
         <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.5-7-12a7 7 0 0 1 14 0c0 5.5-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg></div>
         <h3>Tìm đường cho xe máy</h3>
         <p>Ba cách tìm đường: miễn phí sẵn có, VietMap hoặc Google (xe máy, tính kẹt xe, giống app Google Maps). VietMap và Google cần mã kích hoạt.</p>
         <ul><li>Gợi ý địa điểm ngay khi gõ, ưu tiên chỗ gần bạn; chạm giữ bản đồ để chọn điểm</li><li>Tối đa 3 tuyến, có bản đồ để phóng to kiểm tra</li><li>Tránh phà, bớt chui vào hẻm nhỏ; đi lệch là tự tìm lại đường</li></ul>
+        <div class="shot"><img src="assets/feat-route.webp" alt="Thẻ tuyến đường Google trên đồng hồ: rẽ, quãng đường còn lại, giới hạn tốc độ" loading="lazy"></div>
       </div>
-      <div class="tile w4 glow">
+      <div class="tile w3 glow">
         <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="5" cy="18" r="2"/><circle cx="19" cy="6" r="2"/><path d="M7 18h7a3 3 0 0 0 0-6h-4a3 3 0 0 1 0-6h7"/></svg></div>
         <h3>Lộ trình nhiều điểm <span class="badge">MỚI</span></h3>
         <p>Vẽ tuyến tour một lần, lưu lại, lần sau bấm Đi là chạy. Có trên Android và iPhone từ bản 0.11.0.</p>
@@ -586,11 +595,7 @@ footer .legal{max-width:580px}
           <li>Xem tổng quan trên bản đồ: điểm đánh số, kéo để dời, giữ để thêm điểm đi qua</li>
           <li>Tuyến dài app tự tìm đường từng phần, tới cuối phần thì tìm tiếp</li>
         </ul>
-      </div>
-      <div class="tile">
-        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><circle cx="12" cy="12" r="8" stroke-dasharray="3 3"/><circle cx="19" cy="5" r="1.5"/><circle cx="4.5" cy="16" r="1.5"/></svg></div>
-        <h3>Anh em quanh đây</h3>
-        <p>Bật Tìm quanh đây trong thẻ Tour để thấy các xe dùng NConnect quanh bạn, theo dòng xe, ngay trên bản đồ của đồng hồ. Tắt được từ menu trên xe. Chỉ ở Việt Nam.</p>
+        <div class="shot app"><img src="assets/app-overview.webp" alt="Tổng quan tuyến nhiều điểm trên bản đồ, các điểm đánh số" loading="lazy"></div>
       </div>
       <div class="tile w3">
         <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 16a8 8 0 1 1 16 0"/><path d="M12 16l4-5"/><circle cx="12" cy="16" r="1.5"/></svg></div>
@@ -601,6 +606,7 @@ footer .legal{max-width:580px}
           <li>Ô thông số cạnh bản đồ có nhiều bố cục: 4 ô, 6 ô, ô lớn kèm ô nhỏ, ô nhạc</li>
           <li>Chủ đề màu cho app trên điện thoại, sáng hoặc tối</li>
         </ul>
+        <div class="shot"><img src="assets/feat-gauge.webp" alt="Màn Đồng hồ kiểu Đường đua và kiểu Kim + bản đồ" loading="lazy"></div>
       </div>
       <div class="tile w3">
         <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="7" width="13" height="10" rx="2"/><path d="M16 11l5-3v8l-5-3"/><circle cx="9.5" cy="12" r="2.5"/></svg></div>
@@ -612,6 +618,13 @@ footer .legal{max-width:580px}
           <li>Camera GoPro (đã nối được GoPro 7), DJI Osmo Action, Insta360: đang quay hay không, pin, thẻ nhớ</li>
           <li>Chưa thử với mọi mẫu camera, van; gặp lỗi thì gửi báo cáo ngay trong app</li>
         </ul>
+        <div class="shot"><img src="assets/feat-tyre-cam.webp" alt="Minh hoạ: áp suất, nhiệt độ lốp trước, sau và trạng thái camera hành trình" loading="lazy"></div>
+      </div>
+      <div class="tile w3">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><circle cx="12" cy="12" r="8" stroke-dasharray="3 3"/><circle cx="19" cy="5" r="1.5"/><circle cx="4.5" cy="16" r="1.5"/></svg></div>
+        <h3>Anh em quanh đây</h3>
+        <p>Bật Tìm quanh đây trong thẻ Tour để thấy các xe dùng NConnect quanh bạn, theo dòng xe, ngay trên bản đồ của đồng hồ. Tắt được từ menu trên xe. Chỉ ở Việt Nam.</p>
+        <div class="shot"><img src="assets/feat-nearby.webp" alt="Minh hoạ: các xe dùng NConnect quanh bạn hiện trên bản đồ đồng hồ, kèm dòng xe" loading="lazy"></div>
       </div>
       <div class="tile w3">
         <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 5h16v11H8l-4 4z"/></svg></div>
@@ -625,35 +638,19 @@ footer .legal{max-width:580px}
         <p>Trung tâm thông tin, Âm nhạc (ảnh bìa, bài tiếp, bài trước, âm lượng), trình chiếu ảnh của bạn. Ô nhạc mini đổi được thành lời chào kèm thời tiết. Tự chọn thông số trên các ô: ắc quy, nước mát, xăng tức thời, xăng trung bình, ODO, xăng còn lại, km còn đi được.</p>
         <div class="shot"><img src="assets/screen-music.webp" alt="Màn Âm nhạc trên đồng hồ" loading="lazy"></div>
       </div>
-      <div class="tile">
+      <div class="tile w3">
         <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
         <h3>Biển tốc độ và camera</h3>
         <p>Đi qua biển giới hạn nào (đúng chiều xe chạy, có cả biển của Sở GTVT TP.HCM), đồng hồ báo theo biển đó. Camera CSGT, camera AI và camera bắn tốc độ phía trước hiện kèm khoảng cách khi còn dưới 350 m. Đường chưa có biển thì ước tính theo <b>Thông tư 38/2024/TT-BGTVT</b>, xe máy tối đa 70 km/h.</p>
         <div class="law"><div class="sign">60</div><p style="font-size:13.5px">Trong khu dân cư: 60 km/h (đường đôi, một chiều ≥ 2 làn) hoặc 50. Ngoài khu dân cư: 70 hoặc 60. <b>Chỉ là ước tính</b>, luôn đi theo biển thực tế.</p></div>
-      </div>
-      <div class="tile">
-        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 17h14l-1.5-6.5A2 2 0 0 0 15.6 9H8.4a2 2 0 0 0-1.9 1.5z"/><circle cx="7.5" cy="17.5" r="2"/><circle cx="16.5" cy="17.5" r="2"/></svg></div>
-        <h3>Xe của bạn</h3>
-        <p>Hồ sơ xe có ảnh. ODO, ắc quy, nhiệt độ máy đọc thẳng từ xe mỗi 10 giây.</p>
-        <ul><li>Nhắc bảo dưỡng theo km: nhớt máy, nhớt láp, lọc gió, bugi, dây curoa</li><li>Đồng hồ nhắc khi sắp tới hạn</li><li>Lịch sử từng lần thay với ngày và ODO, thêm được các lần đã thay trước đây</li><li>Thêm mục của riêng bạn: lốp, má phanh, dầu phanh...</li></ul>
-      </div>
-      <div class="tile">
-        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.800 7 11 7 11z"/><circle cx="12" cy="10" r="2.500"/></svg></div>
-        <h3>Tour</h3>
-        <p>Tạo chuyến đi với điểm xuất phát, điểm đến, giờ đi, liên hệ. Anh em trong 50 km thấy và join, Android và iPhone dùng chung.</p>
-        <ul><li>Từ 1 tiếng trước giờ đi app tự vào nhóm của tour để thấy vị trí của nhau</li><li>Android: báo cho chủ tour khi có người join, báo thành viên khi tour huỷ</li></ul>
-      </div>
-      <div class="tile w3">
-        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 10v4h4l5 4V6L8 10zM16 9a4 4 0 0 1 0 6M18.500 6.500a8 8 0 0 1 0 11"/></svg></div>
-        <h3>Giọng nói tiếng Việt <span class="badge">THỬ NGHIỆM</span></h3>
-        <p>Đọc qua tai nghe hoặc loa điện thoại, bật tắt từng nhóm trong Cài đặt.</p>
-        <ul><li>Hướng rẽ, đọc đủ tên đường thay vì chữ viết tắt</li><li>Camera bắn tốc độ phía trước, chạy quá tốc độ</li><li>Giới hạn tốc độ khi đổi đường, kể cả khi không có biển</li></ul>
+        <div class="shot"><img src="assets/feat-signs.webp" alt="Biển giới hạn tốc độ và khoảng cách tới camera trên đồng hồ" loading="lazy"></div>
       </div>
       <div class="tile w3">
         <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="10" height="17" rx="1.5"/><path d="M6.5 8h5M14 9h2.5a1.5 1.5 0 0 1 1.5 1.5V16a1.5 1.5 0 0 0 3 0V8l-3-3"/></svg></div>
         <h3>Xăng còn bao nhiêu km</h3>
         <p>Đổ đầy bình rồi bấm "Vừa đổ đầy" (trên điện thoại, hoặc ngay trên xe ở menu Yêu thích). NConnect cộng lượng xăng xe báo đã dùng, tính số km còn đi được theo mức tiêu hao của chính bạn.</p>
         <ul><li>Số km hiện ở góc trên bản đồ trên đồng hồ</li><li>Dưới 40 km thì nhắc tìm trạm xăng</li><li>XMAX 13 L, NMAX 7,1 L hoặc tự nhập dung tích</li></ul>
+        <div class="shot"><img src="assets/feat-fuel.webp" alt="Ô xăng trên bản đồ: trạm xăng phía trước và số km còn đi được" loading="lazy"></div>
       </div>
       <div class="tile w3">
         <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M14 20c0-2.5 1.5-4.5 4-4.5s3 1.5 3 3"/></svg></div>
@@ -661,6 +658,32 @@ footer .legal{max-width:580px}
         <p>Một người tạo nhóm, gửi mã 6 số cho anh em. Vị trí từng người hiện thành chấm màu kèm chữ cái đầu và tên ngay trên bản đồ của đồng hồ, có điểm hẹn chung. Không cần nhìn điện thoại vẫn biết anh em đang ở đâu.</p>
         <ul><li>Báo khi có người tụt lại phía sau, mất tín hiệu, hoặc chính bạn bị tụt lại</li><li>"Cần hỗ trợ" từ menu trên xe: cả nhóm nhận thông báo, vị trí của bạn khoanh đỏ trên bản đồ</li></ul>
         <div class="shot"><img src="assets/screen-group.webp" alt="Đi nhóm: chấm vị trí của Tuấn, Hùng, Minh trên bản đồ đồng hồ" loading="lazy"></div>
+      </div>
+      <div class="tile w3">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.800 7 11 7 11z"/><circle cx="12" cy="10" r="2.500"/></svg></div>
+        <h3>Tour</h3>
+        <p>Tạo chuyến đi với điểm xuất phát, điểm đến, giờ đi, liên hệ. Anh em trong 50 km thấy và join, Android và iPhone dùng chung.</p>
+        <ul><li>Từ 1 tiếng trước giờ đi app tự vào nhóm của tour để thấy vị trí của nhau</li><li>Android: báo cho chủ tour khi có người join, báo thành viên khi tour huỷ</li></ul>
+        <div class="shot"><img src="assets/feat-tour.webp" alt="Minh hoạ: danh sách tour quanh bạn, bấm Tham gia" loading="lazy"></div>
+      </div>
+      <div class="tile">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 17h14l-1.5-6.5A2 2 0 0 0 15.6 9H8.4a2 2 0 0 0-1.9 1.5z"/><circle cx="7.5" cy="17.5" r="2"/><circle cx="16.5" cy="17.5" r="2"/></svg></div>
+        <h3>Xe của bạn</h3>
+        <p>Hồ sơ xe có ảnh. ODO, ắc quy, nhiệt độ máy đọc thẳng từ xe mỗi 10 giây.</p>
+        <ul><li>Nhắc bảo dưỡng theo km: nhớt máy, nhớt láp, lọc gió, bugi, dây curoa</li><li>Đồng hồ nhắc khi sắp tới hạn</li><li>Lịch sử từng lần thay với ngày và ODO, thêm được các lần đã thay trước đây</li><li>Thêm mục của riêng bạn: lốp, má phanh, dầu phanh...</li></ul>
+        <div class="shot app"><img src="assets/feat-bike.webp" alt="Thẻ Xe của bạn trong app: ODO, xăng còn, nhớt máy" loading="lazy"></div>
+      </div>
+      <div class="tile">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 20h18"/><rect x="5" y="11" width="3" height="7"/><rect x="10.5" y="6" width="3" height="12"/><rect x="16" y="9" width="3" height="9"/></svg></div>
+        <h3>Hành trình và nhiên liệu</h3>
+        <p>Tổng kết hôm nay, 7 ngày, tháng này. Từng chuyến vẽ trên bản đồ, kèm tốc độ cao nhất, tốc độ trung bình và nhiên liệu (L/100km) đọc từ bộ đếm xăng của xe. Dừng đổ xăng hay mất kết nối giữa đường vẫn là một chuyến.</p>
+        <div class="shot app"><img src="assets/feat-trips.webp" alt="Danh sách hành trình trong app với quãng đường, thời gian, tốc độ trung bình" loading="lazy"></div>
+      </div>
+      <div class="tile">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <h3>Khoe chuyến đi</h3>
+        <p>Thời gian tăng tốc 0–60 và 0–100 km/h của từng chuyến. Tạo ảnh chia sẻ kiểu app chạy bộ: nền bản đồ có tuyến đường, hoặc ảnh của bạn kèm bản đồ nhỏ, tự chọn thông số, khung bài đăng hoặc story. Ghép nhiều chuyến thành một ảnh tổng hợp, ví dụ chuyến đi nhiều ngày. Biển số và ODO không bao giờ hiện trên ảnh.</p>
+        <div class="shot app"><img src="assets/share-real.webp" alt="Ảnh chia sẻ chuyến đi thật tạo bằng NConnect: ảnh xe kèm bản đồ nhỏ và thông số" loading="lazy"></div>
       </div>
       <div class="tile w3">
         <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="6" y="3" width="12" height="18" rx="2"/><path d="M10 7h4"/><path d="M12 11v4M10 13h4"/></svg></div>
@@ -672,11 +695,19 @@ footer .legal{max-width:580px}
           <li>Hình mượt, ít rớt kết nối kể cả khi đeo tai nghe Bluetooth</li>
           <li>Màn hình chào bằng video mỗi lần bật xe</li>
         </ul>
+        <div class="shot app"><img src="assets/feat-home.webp" alt="Trang chủ NConnect: trạng thái kết nối, nút Kết nối với xe" loading="lazy"></div>
+      </div>
+      <div class="tile w3">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 18 12 3l8 15-8-4z"/></svg></div>
+        <h3>Android Auto trên đồng hồ <span class="badge">ĐANG PHÁT TRIỂN</span></h3>
+        <p>Đưa Android Auto lên màn TFT zin: Google Maps, Waze, nhạc… điều khiển bằng cùm công tắc. Menu đồng hồ mở dẫn đường Về nhà, Đi làm, Trạm xăng; Yêu thích có Trợ lý Google, Bản đồ, Nhạc, Bài đang phát, Zoom bản đồ.</p>
+        <div class="shot"><img src="assets/screen-aa.webp" alt="Android Auto (YouTube Music) trên đồng hồ, bản đang phát triển" loading="lazy"></div>
       </div>
       <div class="tile">
-        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 20h18"/><rect x="5" y="11" width="3" height="7"/><rect x="10.5" y="6" width="3" height="12"/><rect x="16" y="9" width="3" height="9"/></svg></div>
-        <h3>Hành trình và nhiên liệu</h3>
-        <p>Tổng kết hôm nay, 7 ngày, tháng này. Từng chuyến vẽ trên bản đồ, kèm tốc độ cao nhất, tốc độ trung bình và nhiên liệu (L/100km) đọc từ bộ đếm xăng của xe. Dừng đổ xăng hay mất kết nối giữa đường vẫn là một chuyến.</p>
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 10v4h4l5 4V6L8 10zM16 9a4 4 0 0 1 0 6M18.500 6.500a8 8 0 0 1 0 11"/></svg></div>
+        <h3>Giọng nói tiếng Việt <span class="badge">THỬ NGHIỆM</span></h3>
+        <p>Đọc qua tai nghe hoặc loa điện thoại, bật tắt từng nhóm trong Cài đặt.</p>
+        <ul><li>Hướng rẽ, đọc đủ tên đường thay vì chữ viết tắt</li><li>Camera bắn tốc độ phía trước, chạy quá tốc độ</li><li>Giới hạn tốc độ khi đổi đường, kể cả khi không có biển</li></ul>
       </div>
       <div class="tile">
         <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="3" width="16" height="18" rx="3"/><path d="M10 16V8h3a2.5 2.5 0 0 1 0 5h-3"/></svg></div>
@@ -687,18 +718,6 @@ footer .legal{max-width:580px}
         <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12M7 10l5 5 5-5"/><path d="M4 17v3h16v-3"/></svg></div>
         <h3>Sao lưu, đổi bộ nút</h3>
         <p>Sao lưu cài đặt, địa điểm, hồ sơ xe, các chuyến đi vào Zalo, Telegram hoặc tự lưu mỗi tuần; đổi máy là khôi phục lại. Chọn bộ nút LÊN / XUỐNG: bấm đúp để phóng to bản đồ hoặc chuyển bài.</p>
-      </div>
-      <div class="tile w3">
-        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="12" cy="12" r="3"/></svg></div>
-        <h3>Khoe chuyến đi</h3>
-        <p>Thời gian tăng tốc 0–60 và 0–100 km/h của từng chuyến. Tạo ảnh chia sẻ kiểu app chạy bộ: nền bản đồ có tuyến đường, hoặc ảnh của bạn kèm bản đồ nhỏ, tự chọn thông số, khung bài đăng hoặc story. Ghép nhiều chuyến thành một ảnh tổng hợp, ví dụ chuyến đi nhiều ngày. Biển số và ODO không bao giờ hiện trên ảnh.</p>
-        <div class="shot share-real"><img src="assets/share-real.webp" alt="Ảnh chia sẻ chuyến đi thật tạo bằng NConnect: ảnh xe kèm bản đồ nhỏ và thông số" loading="lazy"></div>
-      </div>
-      <div class="tile w3">
-        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 18 12 3l8 15-8-4z"/></svg></div>
-        <h3>Android Auto trên đồng hồ <span class="badge">ĐANG PHÁT TRIỂN</span></h3>
-        <p>Đưa Android Auto lên màn TFT zin: Google Maps, Waze, nhạc… điều khiển bằng cùm công tắc. Menu đồng hồ mở dẫn đường Về nhà, Đi làm, Trạm xăng; Yêu thích có Trợ lý Google, Bản đồ, Nhạc, Bài đang phát, Zoom bản đồ.</p>
-        <div class="shot"><img src="assets/screen-aa.webp" alt="Android Auto (YouTube Music) trên đồng hồ, bản đang phát triển" loading="lazy"></div>
       </div>
     </div>
   </div>

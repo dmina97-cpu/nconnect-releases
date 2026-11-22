@@ -7,10 +7,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>NConnect · Bản đồ lên đồng hồ xe máy Yamaha, Zontes, CFMOTO</title>
-<meta name="description" content="NConnect đưa bản đồ Google / VietMap, dẫn đường, thông báo, cuộc gọi, nhạc và thông số xe lên đồng hồ của nhiều hãng xe: Yamaha XMAX 300, NMAX 155, MT-09, R9, TMAX 560, Tracer 9, Zontes 368, 350, 703, 125 và CFMOTO 450SR-S, 675NK, 450MT, 700MT (thử nghiệm). Kết nối dễ, bật xe là bản đồ tự lên.">
-<meta property="og:title" content="NConnect · Bản đồ lên đồng hồ xe máy Yamaha, Zontes, CFMOTO">
-<meta property="og:description" content="Bản đồ, dẫn đường, thông báo và nhạc ngay trên đồng hồ TFT của Yamaha, Zontes và CFMOTO. Kết nối dễ, bật xe là bản đồ tự lên.">
+<title>NConnect · Bản đồ lên đồng hồ xe máy Yamaha, Zontes, CFMOTO, KOVE, VOGE, BMW</title>
+<meta name="description" content="NConnect đưa bản đồ Google / VietMap, dẫn đường, thông báo, cuộc gọi, nhạc và thông số xe lên đồng hồ của nhiều hãng xe: Yamaha XMAX 300, NMAX 155, MT-09, R9, TMAX 560, Tracer 9, Zontes 368, 350, 703, 125; thử nghiệm CFMOTO 450SR-S, 675NK, 450MT, 700MT, KOVE, VOGE, BMW 10.25 inch, Morbidelli T352X, WMoto. Kết nối dễ, bật xe là bản đồ tự lên.">
+<meta property="og:title" content="NConnect · Bản đồ lên đồng hồ xe máy Yamaha, Zontes, CFMOTO, KOVE, VOGE, BMW">
+<meta property="og:description" content="Bản đồ, dẫn đường, thông báo và nhạc ngay trên đồng hồ TFT của Yamaha, Zontes, CFMOTO, KOVE, VOGE, BMW, Morbidelli và WMoto. Kết nối dễ, bật xe là bản đồ tự lên.">
 <meta property="og:image" content="assets/dash-real.webp">
 <meta name="theme-color" content="#f1f2f4" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#111318" media="(prefers-color-scheme: dark)">
@@ -878,6 +878,23 @@ footer .legal{max-width:580px}
   .reveal{opacity:1!important;transform:none!important;transition:none!important}
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;animation-delay:0s!important;transition-duration:.01ms!important}
 }
+/* Bike checker */
+.checker{margin:0 0 22px}
+.checker h3{margin:0 0 6px}
+.checker p{margin:0 0 14px;color:var(--sub)}
+.checker input{width:100%;box-sizing:border-box;font:inherit;font-size:17px;padding:14px 18px;border-radius:var(--r-md);border:1px solid var(--line2);background:var(--glass-bg-strong);color:var(--text);outline:none}
+.checker input:focus{border-color:var(--red);box-shadow:0 0 0 3px var(--red-soft)}
+.ck-out{list-style:none;margin:12px 0 0;padding:0;display:grid;gap:8px}
+.ck-out:empty{display:none}
+.ck-out li{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;padding:12px 14px;border-radius:var(--r-sm);background:var(--card2);border:1px solid var(--line)}
+.ck-out b{font-weight:700;min-width:0;overflow-wrap:anywhere}
+.ck-out li::before{content:none;display:none}.ck-out .ck-meta{flex-basis:100%;font-size:14px;color:var(--dim)}
+.ck-st{font-size:12px;font-weight:700;padding:3px 10px;border-radius:999px;white-space:nowrap}
+.ck-st.ok{background:rgba(22,163,74,.14);color:var(--green)}
+.ck-st.test{background:var(--amber-soft);color:var(--amber)}
+.ck-st.no{background:var(--red-soft);color:var(--red-ink)}
+.checker .ck-note{font-size:14px;margin:12px 0 0}
+.ck-note a{color:var(--red);font-weight:600}
 </style>
 </head>
 <body>
@@ -930,7 +947,7 @@ footer .legal{max-width:580px}
 <header class="hero">
   <div class="wrap hero-grid">
     <div>
-      <div class="eyebrow">Cho xe Yamaha, Zontes và CFMOTO · Android · iPhone</div>
+      <div class="eyebrow">Yamaha, Zontes, CFMOTO, KOVE, VOGE, BMW, Morbidelli, WMoto · Android · iPhone</div>
       <h1>Bản đồ, dẫn đường và cả điện thoại, <em>ngay trên đồng hồ xe của bạn.</em></h1>
       <p class="lead">Một app cho đồng hồ của nhiều hãng xe. NConnect đưa Google Maps hoặc VietMap, thông báo, cuộc gọi, nhạc và thông số xe lên màn TFT zin. Chọn dòng xe, làm theo vài bước một lần, từ lần sau bật xe là bản đồ tự lên. Với Yamaha không cần Y-Connect.</p>
       <div class="cta">
@@ -995,6 +1012,15 @@ footer .legal{max-width:580px}
       <div class="eyebrow">Kết nối</div>
       <h2>Xe nào cũng nối dễ.</h2>
       <p class="lead">Chọn dòng xe trong app, làm theo vài bước một lần. Từ lần sau bật xe là bản đồ tự lên, điện thoại cứ để trong túi hoặc cốp.</p>
+    </div>
+    <div class="checker tile glow" id="xe-cua-ban">
+      <h3>Xe của bạn dùng được không?</h3>
+      <p>Gõ tên xe để xem NConnect đã chạy trên xe đó chưa.</p>
+      <input id="ckIn" type="search" autocomplete="off" spellcheck="false" placeholder="Ví dụ: Tracer 9, KOVE 800X, 450MT" aria-label="Tên xe">
+      <ul id="ckOut" class="ck-out" aria-live="polite"></ul>
+      <p id="ckNone" class="ck-note" hidden><span>Chưa thấy xe này trong danh sách.</span> <a href="https://discord.gg/pXWQtGQHtd" target="_blank" rel="noopener">Gửi ảnh đồng hồ và tên xe trên Discord</a></p>
+      <p id="ckTest" class="ck-note" hidden>Đang thử nghiệm: kết nối đã làm xong, đang cần thêm người thử trên xe thật. Có lỗi thì gửi báo cáo ngay trong app.</p>
+      <p class="ck-note">Cách kết nối từng xe ở ngay dưới.</p>
     </div>
     <div class="bento">
       <div class="tile w3 glow">
@@ -1721,6 +1747,44 @@ footer .legal{max-width:580px}
     addEventListener("resize", syncArrows, { passive: true });
     syncArrows();
   }
+})();
+</script>
+<script>
+/* Bike checker: same list as nconnect-bot/kien-thuc-app.md section 2. */
+(()=>{
+const BT="Qua Bluetooth",WU="Qua Wi-Fi hoặc USB của xe",WD="Qua Wi-Fi của đồng hồ",BW="Qua Bluetooth và Wi-Fi Direct",AI="Android · iPhone",AO="Chỉ Android";
+const B=[
+["Yamaha XMAX 300","ok",AI,BT,"x-max"],["Yamaha NMAX 155","ok",AI,BT,"n-max"],
+["Yamaha MT-09 / MT-09 SP 2024+","ok",AI,BT,"mt09"],["Yamaha YZF-R9 2025+","test",AI,BT,"r9"],
+["Yamaha Tracer 9 / Tracer 9 GT / GT+","ok",AI,WU,"tracer9"],["Yamaha TMAX 560","test",AI,WU,"t-max tmax560"],
+["Zontes 368G / 368K / 368E","ok",AI,WD,""],["Zontes 350M / 350D / 350E","ok",AI,WD,""],["Zontes 703F","ok",AI,WD,""],["Zontes 125X / 125V","ok",AI,WD,""],
+["CFMOTO 450SR-S","test",AI,WD,"cf moto 450sr"],["CFMOTO 450MT","test",AI,WD,"cf moto ibex"],["CFMOTO 700MT","test",AI,WD,"cf moto"],["CFMOTO 675NK","test",AI,WD,"cf moto"],
+["BMW C 400 GT","test",AO,BW,"c400gt"],["BMW CE 04","test",AO,BW,"ce04"],["BMW R 1250 RT","test",AO,BW,"r1250rt"],
+["BMW K 1600 GT / GTL / B / Grand America","test",AO,BW,"k1600"],["BMW R 18 B / Transcontinental","test",AO,BW,"r18"],
+["Morbidelli T352X","test",AI,WD,""],["WMoto Gobi 300","test",AI,WD,"w moto"],["WMoto Touch 300","test",AI,WD,"w moto"],
+["KOVE 450 Rally","test",AO,WD,""],["KOVE 800X","test",AO,WD,""],["KOVE 625X","test",AO,WD,""],["KOVE 350RR","test",AO,WD,""],
+["VOGE DS800X","test",AO,WD,"800ds"],["VOGE 800 Rally","test",AO,WD,""],["VOGE 900DSX","test",AO,WD,""],["VOGE DS525X","test",AO,WD,"525dsx"],
+["Yamaha XSR900 GP","no","","",""]];
+const ST={ok:"Chạy thật",test:"Đang thử nghiệm",no:"Chưa hỗ trợ"};
+const n=s=>s.toLowerCase().replace(/[^a-z0-9]+/g,"");
+const inp=document.getElementById("ckIn"),out=document.getElementById("ckOut"),none=document.getElementById("ckNone"),tst=document.getElementById("ckTest");
+if(!inp)return;
+const idx=B.map(b=>[b,n(b[0])+" "+n(b[4])]);
+function run(){
+  const parts=inp.value.trim().split(/\s+/).map(n).filter(Boolean);
+  out.replaceChildren();none.hidden=true;tst.hidden=true;
+  if(!parts.length)return;
+  const hit=idx.filter(([b,k])=>parts.every(p=>k.includes(p))).slice(0,8);
+  if(!hit.length){none.hidden=false;return}
+  for(const [b] of hit){
+    const li=document.createElement("li"),t=document.createElement("b"),s=document.createElement("span");
+    t.textContent=b[0];s.className="ck-st "+b[1];s.textContent=ST[b[1]];li.append(t,s);
+    if(b[2]){const m=document.createElement("span");m.className="ck-meta";m.append(document.createTextNode(b[2]),document.createTextNode(" · "),document.createTextNode(b[3]));li.append(m)}
+    out.append(li);
+  }
+  tst.hidden=!hit.some(([b])=>b[1]==="test");
+}
+inp.addEventListener("input",run);
 })();
 </script>
 <script src="assets/i18n.js"></script>

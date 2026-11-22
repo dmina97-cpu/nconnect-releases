@@ -895,6 +895,128 @@ footer .legal{max-width:580px}
 .ck-st.no{background:var(--red-soft);color:var(--red-ink)}
 .checker .ck-note{font-size:14px;margin:12px 0 0}
 .ck-note a{color:var(--red);font-weight:600}
+
+/* ---------- Mobile Balance & Apple iOS Polish ---------- */
+@media(max-width:760px){
+  section{padding:58px 0;scroll-margin-top:76px}
+
+  /* Community strip */
+  .community{font-size:12px}
+  .community .wrap{padding:7px 12px;gap:6px}
+  .community a{padding:4px 10px;gap:5px}
+
+  /* Floating Glass Nav: richer frosting when scrolled over content */
+  .nav{padding:6px 10px 0}
+  .nav .wrap{height:52px;padding:0 10px;gap:7px}
+  .nav.solid .wrap{background:rgba(255,255,255,.88)}
+  :root[data-theme="dark"] .nav.solid .wrap{background:rgba(16,20,30,.86)}
+
+  /* Hero: centered Apple product rhythm + TFT showcase promoted right under lead */
+  .hero{padding:20px 0 48px}
+  .hero-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:0;text-align:center}
+  .hero-grid>div:first-child{display:contents}
+  .hero .eyebrow{
+    order:1;margin:0 auto 14px;padding:6px 13px;font-size:12px;
+    justify-content:center;text-align:center;
+  }
+  .hero .eyebrow::before{display:none}
+  .hero h1{
+    order:2;font-size:clamp(30px,8.2vw,42px);line-height:1.08;
+    margin:0 auto;max-width:14.5ch;
+  }
+  .hero .lead{
+    order:3;font-size:15px;line-height:1.58;
+    margin:14px auto 22px;max-width:40ch;
+  }
+  .hero-stage{order:4;margin:0 0 22px;gap:10px}
+  .hero .cta{
+    order:5;flex-direction:column;gap:10px;width:100%;max-width:360px;margin:0 auto;
+  }
+  .hero .cta .btn{width:100%;justify-content:center;padding:14px 20px;font-size:15px}
+  .hero .guide-link{order:6;justify-content:center;margin:14px auto 0;font-size:14px}
+  .hero .ver{order:7;margin:10px auto 0;text-align:center;font-size:12.5px}
+
+  /* Download Telemetry Glass Capsule: centered & symmetric */
+  .dlstat{
+    order:8;margin:18px auto 0;padding:15px 18px;max-width:360px;
+    justify-content:center;text-align:center;gap:4px 10px;
+  }
+  .dlstat b{font-size:30px}
+  .dlstat .lbl{font-size:13.5px}
+  .dlstat .split{font-size:12.5px;margin-top:3px}
+
+  /* 6 Feature Highlights: balanced 2x3 Liquid Glass mini-grid */
+  .chips{
+    order:9;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:1fr;
+    gap:8px;margin:16px auto 0;width:100%;max-width:440px;
+  }
+  .chip{
+    display:block;position:relative;text-align:left;
+    padding:11px 11px 11px 23px;border-radius:16px;
+    font-size:12.5px;line-height:1.38;height:100%;
+  }
+  .chip::before{position:absolute;left:10px;top:17px;margin:0}
+
+  /* Hero TFT Showcase: crisp single-row swipeable tabs + symmetric 4x2 brand grid */
+  .stage-card{border-radius:24px;padding:8px}
+  .stage-viewport{border-radius:16px}
+  .stage-pills{
+    flex-wrap:nowrap;overflow-x:auto;justify-content:flex-start;
+    padding:9px 2px 2px;gap:4px;scrollbar-width:none;-webkit-overflow-scrolling:touch;
+  }
+  .stage-pills::-webkit-scrollbar{display:none}
+  .stage-pills button{flex:none;font-size:12px;padding:6px 11px}
+  .stage-brands{
+    display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;width:100%;
+  }
+  .stage-brands span{
+    text-align:center;padding:6px 2px;font-size:10.8px;letter-spacing:-.01em;
+    white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+  }
+
+  /* Section heads, Install, Bikes, Changelog, FAQ, Final CTA */
+  .head>.eyebrow{margin-bottom:10px;font-size:12.5px}
+  h2{font-size:clamp(26px,7.2vw,34px);margin-bottom:12px}
+  .lead{font-size:15px}
+  .bento{margin-top:28px;gap:14px}
+  .tile{padding:20px 18px;border-radius:22px}
+  .tile .ico{width:40px;height:40px;margin-bottom:14px}
+  .tile h3{font-size:18.5px}
+  .tile p,.tile li{font-size:14.5px}
+  .checker input{font-size:15.5px;padding:12px 15px}
+
+  #cai-dat .cta .btn{width:100%;justify-content:center}
+  .install{margin-top:22px;gap:12px}
+  .install .s{padding:18px 18px;border-radius:20px}
+  .bikes-title{margin-top:42px;font-size:18px}
+  .bikes{gap:8px}
+  .bikes span{font-size:13px;padding:7px 12px}
+
+  .log{margin-top:28px;padding-left:22px;gap:14px}
+  .log::before{left:5px}
+  .rel{padding:18px 16px;border-radius:20px}
+  .rel::before{left:-22px;top:21px;width:11px;height:11px}
+  .rel h3{font-size:18px}
+  .rel ul{font-size:14px}
+
+  .faq{margin-top:26px;gap:10px}
+  details{border-radius:18px}
+  summary{padding:16px 16px;font-size:15px}
+  details p{padding:0 18px 16px 16px;font-size:14.5px}
+
+  .thanks{margin-top:26px;gap:12px}
+  .thank{padding:20px 18px;border-radius:22px}
+
+  .cta-final{padding:56px 0}
+  .cta-final .wrap{padding:30px 20px;border-radius:26px;margin:0 16px;text-align:center}
+  .cta-final h2{max-width:none;font-size:clamp(26px,7.5vw,36px)}
+  .cta-final .lead{margin:0 auto}
+  .cta-final .cta{flex-direction:column;gap:10px;margin-top:22px}
+  .cta-final .cta .btn{width:100%;justify-content:center}
+}
+@media (prefers-color-scheme:dark) and (max-width:760px){
+  :root:not([data-theme="light"]) .nav.solid .wrap{background:rgba(16,20,30,.86)}
+}
 </style>
 </head>
 <body>

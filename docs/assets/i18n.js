@@ -224,7 +224,9 @@
           note.style.color = "var(--sub)";
           a.appendChild(note);
         }
-        note.textContent = NOTE_MSG[lang] || NOTE_MSG.en;
+        // Only write when different: the observer watches #log, so an unconditional write re-triggers changelog() forever (100% CPU).
+        const msg = NOTE_MSG[lang] || NOTE_MSG.en;
+        if (note.textContent !== msg) note.textContent = msg;
       } else if (note) note.remove();
     }
   }

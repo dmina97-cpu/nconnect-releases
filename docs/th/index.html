@@ -29,7 +29,13 @@
 <link rel="alternate" hreflang="es" href="https://nconnectapp.com/es/">
 <link rel="alternate" hreflang="id" href="https://nconnectapp.com/id/">
 <link rel="alternate" hreflang="pt" href="https://nconnectapp.com/pt/">
+<link rel="alternate" hreflang="hu" href="https://nconnectapp.com/hu/">
 <link rel="alternate" hreflang="th" href="https://nconnectapp.com/th/">
+<link rel="alternate" hreflang="zh-Hans" href="https://nconnectapp.com/zh/">
+<link rel="alternate" hreflang="zh-Hant" href="https://nconnectapp.com/zh-TW/">
+<link rel="alternate" hreflang="ja" href="https://nconnectapp.com/ja/">
+<link rel="alternate" hreflang="ko" href="https://nconnectapp.com/ko/">
+<link rel="alternate" hreflang="ms" href="https://nconnectapp.com/ms/">
 <link rel="alternate" hreflang="x-default" href="https://nconnectapp.com/en/">
 <meta name="theme-color" content="#f1f2f4" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#111318" media="(prefers-color-scheme: dark)">
@@ -394,11 +400,12 @@ section{padding:116px 0;position:relative;scroll-margin-top:96px}
   backdrop-filter:blur(32px) saturate(200%);-webkit-backdrop-filter:blur(32px) saturate(200%);
   border:1px solid var(--glass-border);border-radius:20px;
   box-shadow:inset 0 1.5px 0 var(--glass-rim-top), inset 0 -1px 0 var(--glass-rim-bot), 0 22px 50px -10px rgba(0,0,0,.28);
-  padding:6px;min-width:196px;display:none;flex-direction:column;gap:2px;z-index:100;
+  padding:8px;min-width:368px;display:none;grid-template-columns:repeat(2,minmax(170px,1fr));gap:2px 4px;z-index:100;
 }
 :root[data-theme="dark"] .lang-dropdown{box-shadow:inset 0 1.5px 0 var(--glass-rim-top),0 26px 60px rgba(0,0,0,.65)}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .lang-dropdown{box-shadow:inset 0 1.5px 0 var(--glass-rim-top),0 26px 60px rgba(0,0,0,.65)}}
-.lang-picker.open .lang-dropdown{display:flex;animation:langDrop .28s var(--ease-spring)}
+.lang-picker.open .lang-dropdown{display:grid;animation:langDrop .28s var(--ease-spring)}
+@media (max-width:520px){.lang-dropdown{min-width:210px;grid-template-columns:1fr;max-height:70vh;overflow-y:auto}}
 @keyframes langDrop{from{opacity:0;transform:translateY(-8px) scale(.94)}to{opacity:1;transform:none}}
 .lang-opt{
   display:flex;align-items:center;justify-content:space-between;gap:10px;
@@ -1079,7 +1086,13 @@ footer .legal{max-width:580px}
         <button class="lang-opt" type="button" role="option" data-lang="es"><span class="name">Español</span><span class="code">ES</span></button>
         <button class="lang-opt" type="button" role="option" data-lang="id"><span class="name">Bahasa Indonesia</span><span class="code">ID</span></button>
         <button class="lang-opt" type="button" role="option" data-lang="pt"><span class="name">Português</span><span class="code">PT</span></button>
+        <button class="lang-opt" type="button" role="option" data-lang="hu"><span class="name">Magyar</span><span class="code">HU</span></button>
         <button class="lang-opt" type="button" role="option" data-lang="th"><span class="name">ไทย</span><span class="code">TH</span></button>
+        <button class="lang-opt" type="button" role="option" data-lang="zh"><span class="name">简体中文</span><span class="code">ZH</span></button>
+        <button class="lang-opt" type="button" role="option" data-lang="zh-TW"><span class="name">繁體中文</span><span class="code">TW</span></button>
+        <button class="lang-opt" type="button" role="option" data-lang="ja"><span class="name">日本語</span><span class="code">JA</span></button>
+        <button class="lang-opt" type="button" role="option" data-lang="ko"><span class="name">한국어</span><span class="code">KO</span></button>
+        <button class="lang-opt" type="button" role="option" data-lang="ms"><span class="name">Bahasa Melayu</span><span class="code">MS</span></button>
       </div>
     </div>
     <a class="btn btn-red dl-primary" href="#cai-dat" data-dl>Tải NConnect</a>
@@ -1721,7 +1734,7 @@ footer .legal{max-width:580px}
   const fmtNum = n => n.toLocaleString("vi-VN");
   // Releases before 0.8.7 were made drafts on 31/10 (owner: old builds may leak API keys). The public API no
   // longer lists them and they can't be downloaded, so their final counts are kept here.
-  const ARCHIVED = { android: 5747, ios: 1739 };
+  const ARCHIVED = { android: 5747, ios: 1744 };
   function showDownloads(pub) {
     let android = ARCHIVED.android, ios = ARCHIVED.ios;
     pub.forEach(r => r.assets.forEach(a => {

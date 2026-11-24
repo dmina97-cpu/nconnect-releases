@@ -54,6 +54,7 @@ hr{border:0;border-top:1px solid var(--line);margin:34px 0}
 <li><b>Đi nhóm:</b> khi bạn tạo hoặc tham gia chuyến đi nhóm, tên hiển thị, dòng xe, điểm đi, điểm đến và thông tin chuyến bạn nhập được lưu để người cùng nhóm thấy, và tự xoá 1 ngày sau khi chuyến kết thúc.</li>
 <li><b>Thông báo:</b> mã nhận thông báo (Firebase Cloud Messaging) của máy, chỉ để gửi thông báo của app.</li>
 <li><b>Gửi log lỗi:</b> chỉ khi bạn bấm gửi. Log gồm thông tin kết nối xe và máy, dùng để sửa lỗi.</li>
+<li><b>Sao lưu Google Drive (tuỳ chọn):</b> chỉ khi bạn bật và đăng nhập Google. App xin quyền <i>drive.appdata</i>: một thư mục riêng của NConnect trong Drive của bạn, chỉ NConnect đọc được; NConnect không xem, không đọc được file nào khác trong Drive. File sao lưu (cài đặt, hồ sơ xe, chuyến đi, mã kích hoạt) đi thẳng từ máy bạn lên Drive của bạn, không qua máy chủ NConnect. App chỉ biết email tài khoản để hiện cho bạn thấy đang nối tài khoản nào. Tắt công tắc là dừng; xoá các bản đã lưu ở Google Drive → Cài đặt → Quản lý ứng dụng → NConnect. Cách NConnect dùng dữ liệu nhận từ API của Google tuân theo Google API Services User Data Policy, kể cả các yêu cầu Limited Use.</li>
 <li>Danh bạ, tin nhắn, cuộc gọi, nhạc và bản đồ trên máy chỉ dùng trên máy để hiện lên đồng hồ xe, không gửi về máy chủ NConnect.</li>
 </ul>
 </section>
@@ -100,6 +101,7 @@ hr{border:0;border-top:1px solid var(--line);margin:34px 0}
 <li><b>Group rides:</b> when you create or join a group ride, the display name, bike, start, destination and ride details you enter are stored so members can see them, and deleted one day after the ride ends.</li>
 <li><b>Notifications:</b> the device's Firebase Cloud Messaging token, only to send app notifications.</li>
 <li><b>Error logs:</b> only when you tap send. They contain bike and phone connection details, used to fix bugs.</li>
+<li><b>Google Drive backup (optional):</b> only when you turn it on and sign in with Google. The app asks for <i>drive.appdata</i>: a private NConnect folder in your Drive that only NConnect can read; NConnect cannot see or read any other file in your Drive. Backups (settings, bike profile, rides, activation codes) go straight from your phone to your Drive, never through NConnect servers. The app only keeps the account email to show you which account is linked. Turning the switch off stops it; delete saved backups in Google Drive → Settings → Manage apps → NConnect. NConnect's use of information received from Google APIs adheres to the Google API Services User Data Policy, including the Limited Use requirements.</li>
 <li>Contacts, messages, calls, music and maps stay on the phone to be shown on the bike's dash; they are not sent to NConnect servers.</li>
 </ul>
 </section>

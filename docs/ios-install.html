@@ -1,0 +1,241 @@
+<!doctype html>
+<!-- NConnect · proprietary © 2026 Phạm Nam 22s. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to Install NConnect on iPhone (.IPA) · Step-by-Step Guide &amp; Videos</title>
+<meta name="description" content="Complete English guide and video tutorials to install NConnect (.ipa) on iPhone using Sideloadly, SideStore, AltStore, or Signulous — no jailbreak required.">
+<link rel="icon" href="assets/logo.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#09090c;--card:#14151c;--card2:#1c1d27;--line:#2a2c3a;--text:#f4f5f8;--sub:#a3a8b8;--red:#ef3340;--ok:#22c55e;--amber:#f59e0b;color-scheme:dark}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:"Inter",system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--red);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:860px;margin:0 auto;padding:18px 18px 72px}
+nav{display:flex;align-items:center;gap:12px;padding-bottom:18px;border-bottom:1px solid var(--line);margin-bottom:26px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:18px;color:var(--text);margin-right:auto}
+.brand img{width:34px;height:34px;border-radius:9px}
+.nav-link{font-size:13.5px;font-weight:600;color:var(--sub);padding:7px 12px;border:1px solid var(--line);border-radius:10px}
+.nav-link:hover{color:var(--text);text-decoration:none;border-color:#4b4f66}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#ff6b76;background:rgba(239,51,64,.12);border:1px solid rgba(239,51,64,.32);padding:5px 12px;border-radius:999px;margin-bottom:12px}
+h1{font-size:clamp(26px,5vw,38px);font-weight:800;letter-spacing:-.025em;line-height:1.15;margin-bottom:10px}
+.lead{color:var(--sub);font-size:15.5px;max-width:680px;margin-bottom:22px}
+.dl-bar{display:flex;align-items:center;gap:14px;flex-wrap:wrap;background:linear-gradient(135deg,rgba(239,51,64,.14),rgba(20,21,28,.95));border:1px solid rgba(239,51,64,.35);border-radius:16px;padding:18px 20px;margin-bottom:26px}
+.dl-bar .info{flex:1;min-width:220px}
+.dl-bar .info b{display:block;font-size:16px;margin-bottom:2px}
+.dl-bar .info span{font-size:13.5px;color:var(--sub)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 18px;border-radius:12px;font-weight:700;font-size:14.5px;border:0;cursor:pointer;text-decoration:none;transition:.15s}
+.btn-red{background:var(--red);color:#fff}
+.btn-red:hover{background:#d92633;text-decoration:none}
+.btn-ghost{background:var(--card2);color:var(--text);border:1px solid var(--line)}
+.btn-ghost:hover{border-color:#535870;text-decoration:none}
+.tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:20px}
+@media(max-width:680px){.tabs{grid-template-columns:1fr}}
+.tab{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 15px;text-align:left;cursor:pointer;color:var(--text);transition:.15s}
+.tab:hover{border-color:#4b4f66}
+.tab.active{border-color:var(--red);background:rgba(239,51,64,.1)}
+.tab .tag{display:inline-block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.03em;padding:2px 8px;border-radius:999px;margin-bottom:6px}
+.tag-free{background:rgba(34,197,94,.14);color:#4ade80;border:1px solid rgba(34,197,94,.3)}
+.tag-rec{background:rgba(239,51,64,.16);color:#ff7b85;border:1px solid rgba(239,51,64,.35)}
+.tag-paid{background:rgba(245,158,11,.14);color:#fbbf24;border:1px solid rgba(245,158,11,.32)}
+.tab b{display:block;font-size:15px;margin-bottom:2px}
+.tab small{display:block;font-size:12.5px;color:var(--sub);line-height:1.4}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px;margin-bottom:18px}
+.panel[hidden]{display:none}
+h2{font-size:20px;font-weight:800;margin-bottom:6px;letter-spacing:-.015em}
+h3{font-size:16px;font-weight:700;margin:18px 0 8px}
+p{color:var(--sub);font-size:14.5px;margin-bottom:10px}
+.video-wrap{position:relative;width:100%;aspect-ratio:16/9;background:#000;border-radius:13px;overflow:hidden;border:1px solid var(--line);margin:14px 0 16px}
+.video-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+ol.steps{list-style:none;counter-reset:st;margin:14px 0}
+ol.steps li{counter-increment:st;position:relative;padding:11px 14px 11px 46px;background:var(--card2);border:1px solid var(--line);border-radius:12px;margin-bottom:9px;font-size:14.5px;color:#d8dce8}
+ol.steps li::before{content:counter(st);position:absolute;left:13px;top:11px;width:24px;height:24px;border-radius:50%;background:rgba(239,51,64,.18);color:#ff6b76;font-weight:800;font-size:12.5px;display:flex;align-items:center;justify-content:center}
+ol.steps li b{color:var(--text)}
+.links-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+.req-card{background:linear-gradient(180deg,rgba(245,158,11,.08),rgba(20,21,28,1));border:1px solid rgba(245,158,11,.35);border-radius:16px;padding:20px 22px;margin-top:22px}
+.req-card h2{color:#fde68a;font-size:18px;margin-bottom:10px}
+.faq details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin-bottom:10px}
+.faq summary{font-weight:700;font-size:14.5px;cursor:pointer;color:var(--text)}
+.faq details p{margin:8px 0 0;font-size:14px}
+.footer{margin-top:34px;padding-top:18px;border-top:1px solid var(--line);display:flex;gap:16px;flex-wrap:wrap;font-size:13px;color:var(--sub)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav>
+    <a class="brand" href="./en/"><img src="assets/logo.webp" alt="NConnect">NConnect</a>
+    <a class="nav-link" href="./en/">← Back to Website</a>
+    <a class="nav-link" href="https://discord.gg/pXWQtGQHtd" target="_blank" rel="noopener">Discord Help</a>
+  </nav>
+
+  <div class="eyebrow">iPhone Installation Guide · No Jailbreak Needed</div>
+  <h1>How to install NConnect (<code>.ipa</code>) on your iPhone</h1>
+  <p class="lead">NConnect for iPhone is currently distributed as an <b>.ipa</b> file (not yet on the App Store). Pick any of the 3 safe methods below — all work on stock iOS without jailbreaking.</p>
+
+  <div class="dl-bar">
+    <div class="info">
+      <b id="ipaLabel">Step 0 — Download the latest NConnect .ipa file</b>
+      <span id="ipaVer">Fetching latest release from GitHub…</span>
+    </div>
+    <a class="btn btn-red" id="ipaBtn" href="https://github.com/dmina97-cpu/nconnect-releases/releases/latest">Download NConnect .IPA</a>
+  </div>
+
+  <div class="tabs" role="tablist">
+    <button class="tab active" data-tab="sideloadly" type="button">
+      <span class="tag tag-rec">Easiest · Free</span>
+      <b>1. Sideloadly (PC / Mac)</b>
+      <small>Install in 3 minutes with a USB cable. Auto-refreshes over Wi-Fi every 7 days.</small>
+    </button>
+    <button class="tab" data-tab="sidestore" type="button">
+      <span class="tag tag-free">No PC After Setup · Free</span>
+      <b>2. SideStore (On-Device)</b>
+      <small>One-time setup with a computer, then refresh NConnect right on your iPhone over Wi-Fi.</small>
+    </button>
+    <button class="tab" data-tab="cert" type="button">
+      <span class="tag tag-paid">No PC · Full 1 Year</span>
+      <b>3. Signulous / AltStore</b>
+      <small>Install directly from Safari for 1 full year (no 7-day refresh) or use AltStore Classic.</small>
+    </button>
+  </div>
+
+  <!-- TAB 1: SIDELOADLY -->
+  <section class="panel" id="tab-sideloadly">
+    <h2>Method 1: Sideloadly (Fastest on Windows or Mac)</h2>
+    <p>Best if you have a Windows PC or Mac nearby. Free Apple IDs refresh automatically over Wi-Fi whenever your computer is on the same network.</p>
+
+    <div class="video-wrap">
+      <iframe src="https://www.youtube.com/embed/_mALij9UEjk" title="How to Install IPA on iPhone using Sideloadly" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+    </div>
+
+    <ol class="steps">
+      <li>Download the latest <b>NConnect .ipa</b> file on your computer using the red button at the top of this page.</li>
+      <li>Download and install <b>Sideloadly</b> from the official website: <a href="https://sideloadly.io/" target="_blank" rel="noopener"><b>sideloadly.io</b></a>.<br><small style="color:var(--sub)">Windows users: also install the <b>non-Microsoft Store</b> versions of iTunes &amp; iCloud using the direct Apple links shown on sideloadly.io.</small></li>
+      <li>Connect your iPhone to your computer with a USB cable and tap <b>Trust</b> on your iPhone screen.</li>
+      <li>Open Sideloadly, drag and drop <b>NConnect.ipa</b> into the IPA box, enter your Apple ID email, and click <b>Start</b> (enter your Apple ID password + 2FA code if prompted).</li>
+      <li>Wait ~30 seconds until it says <b>Done</b> — NConnect will appear on your iPhone Home Screen! Follow the <b>First-Time iOS Steps</b> below to open it.</li>
+    </ol>
+
+    <div class="links-row">
+      <a class="btn btn-red" href="https://sideloadly.io/" target="_blank" rel="noopener">Download Sideloadly (Official) ›</a>
+      <a class="btn btn-ghost" href="https://www.youtube.com/watch?v=vqTsavQc3lQ" target="_blank" rel="noopener">Wireless Refresh Tutorial (YouTube) ›</a>
+    </div>
+  </section>
+
+  <!-- TAB 2: SIDESTORE -->
+  <section class="panel" id="tab-sidestore" hidden>
+    <h2>Method 2: SideStore (Free · Refresh Directly on iPhone)</h2>
+    <p>Great for riders who travel often: you only need a computer <b>once</b> for initial setup. After that, you can refresh NConnect directly on your iPhone over any Wi-Fi network without a computer.</p>
+
+    <div class="video-wrap">
+      <iframe src="https://www.youtube.com/embed/OZ_Hy9HyhIs" title="How to Install SideStore on iPhone (No Computer After Setup)" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+    </div>
+
+    <ol class="steps">
+      <li>Follow the official SideStore setup guide at <a href="https://docs.sidestore.io/docs/installation/prerequisites" target="_blank" rel="noopener"><b>docs.sidestore.io</b></a> to install <b>SideStore</b> + a local pairing VPN (such as <b>LocalDevVPN</b>) on your iPhone.</li>
+      <li>Download the latest <b>NConnect .ipa</b> directly onto your iPhone (saved in the Apple <b>Files</b> app).</li>
+      <li>Turn on your local VPN app on iPhone (on Wi-Fi), open <b>SideStore</b>, tap the <b>+</b> button in <b>My Apps</b>, and select <b>NConnect.ipa</b>.</li>
+      <li>Every 7 days (before expiration), simply toggle the local VPN on Wi-Fi and tap <b>Refresh All</b> inside SideStore — no computer needed!</li>
+    </ol>
+
+    <div class="links-row">
+      <a class="btn btn-red" href="https://docs.sidestore.io/docs/installation/prerequisites" target="_blank" rel="noopener">Official SideStore Written Guide ›</a>
+      <a class="btn btn-ghost" href="https://www.youtube.com/watch?v=kaYBV9_uvaA" target="_blank" rel="noopener">Detailed SideStore Video (YouTube) ›</a>
+    </div>
+  </section>
+
+  <!-- TAB 3: SIGNULOUS / ALTSTORE -->
+  <section class="panel" id="tab-cert" hidden>
+    <h2>Method 3: 1-Year Certificate (No PC) or AltStore Classic</h2>
+
+    <h3>Option A — Signulous (No Computer · Valid for 1 Full Year)</h3>
+    <p>If you prefer never using a computer and never refreshing every 7 days, international signing services like <b>Signulous</b> (~$20/year, Visa / PayPal) register your iPhone UDID with an Apple Developer certificate.</p>
+    <ol class="steps">
+      <li>Register your iPhone at <a href="https://www.signulous.com/" target="_blank" rel="noopener"><b>signulous.com</b></a> (Apple requires a one-time ~72-hour activation wait for new devices).</li>
+      <li>Download <b>NConnect .ipa</b> on your iPhone using Safari (button at the top of this page).</li>
+      <li>Open your Signulous dashboard in Safari → tap <b>Upload App (.ipa)</b> → pick <b>NConnect.ipa</b> → tap <b>Sign &amp; Install</b> directly onto your iPhone.</li>
+    </ol>
+
+    <h3>Option B — AltStore Classic (Free · Mac &amp; Windows)</h3>
+    <p>The original trusted open-source sideloader with background Wi-Fi refresh while AltServer runs on your Mac or Windows PC.</p>
+    <div class="links-row">
+      <a class="btn btn-red" href="https://www.signulous.com/" target="_blank" rel="noopener">Visit Signulous (1-Year No PC) ›</a>
+      <a class="btn btn-ghost" href="https://faq.altstore.io/" target="_blank" rel="noopener">Official AltStore Guide (Win / Mac) ›</a>
+    </div>
+  </section>
+
+  <!-- MANDATORY FIRST-TIME IOS STEPS -->
+  <div class="req-card">
+    <h2>Required First-Time Steps on Your iPhone (Do This After Installing!)</h2>
+    <ol class="steps" style="margin-bottom:0">
+      <li><b>Trust your developer profile:</b> Open iPhone <b>Settings → General → VPN &amp; Device Management</b> → tap your Apple ID → tap <b>Trust</b>.</li>
+      <li><b>Enable Developer Mode (iOS 16+):</b> Open iPhone <b>Settings → Privacy &amp; Security → Developer Mode</b> → switch <b>ON</b> and restart your iPhone when prompted.</li>
+      <li><b>Grant riding permissions:</b> Open <b>NConnect</b> and allow <b>Bluetooth</b>, <b>Local Network</b>, and <b>Location ("Always")</b> so maps and Apple CarPlay stay running smoothly with your screen locked.</li>
+    </ol>
+  </div>
+
+  <!-- QUICK FAQ -->
+  <div class="faq" style="margin-top:26px">
+    <h2 style="margin-bottom:12px">Quick Troubleshooting</h2>
+    <details>
+      <summary>Why does iPhone say "Untrusted Developer" or "Developer Mode Required"?</summary>
+      <p>That's normal for any app installed outside the App Store. Follow Steps 1 and 2 in the yellow box above (<b>Trust</b> in VPN &amp; Device Management, then turn ON <b>Developer Mode</b> under Privacy &amp; Security and reboot once).</p>
+    </details>
+    <details>
+      <summary>Why does a free Apple ID expire after 7 days? Will I lose my settings?</summary>
+      <p>Apple limits free developer signatures to 7 days and 3 sideloaded apps at a time. When you refresh/reinstall NConnect with Sideloadly or SideStore (without deleting the app first), <b>all your settings, bikes, favorites, and activation codes stay intact</b>.</p>
+    </details>
+    <details>
+      <summary>How do I enable Apple CarPlay on my motorcycle TFT after installing?</summary>
+      <p>Turn on <b>Siri</b> in iPhone Settings, open NConnect → tap <b>CarPlay</b> on the Home screen → tap <b>Activate MFi Online</b>. For bikes with built-in 5 GHz dash Wi-Fi (Yamaha TMAX / Tracer 9, BMW 10.25", Zontes, CFMOTO, Morbidelli, QJMotor, Moto Morini…), join the dash Wi-Fi and tap <b>Fill from Bike QR</b> → <b>Start CarPlay</b>.</p>
+    </details>
+  </div>
+
+  <div class="footer">
+    <a href="./en/">nconnectapp.com</a>
+    <a href="https://discord.gg/pXWQtGQHtd" target="_blank" rel="noopener">Discord Support Community</a>
+    <a href="terms.html#en">Terms of Use</a>
+    <a href="privacy.html#en">Privacy Policy</a>
+  </div>
+</div>
+
+<script>
+(() => {
+  // Interactive tabs
+  const tabs = document.querySelectorAll(".tab");
+  const panels = {
+    sideloadly: document.getElementById("tab-sideloadly"),
+    sidestore: document.getElementById("tab-sidestore"),
+    cert: document.getElementById("tab-cert"),
+  };
+  tabs.forEach(btn => btn.addEventListener("click", () => {
+    tabs.forEach(b => b.classList.toggle("active", b === btn));
+    Object.entries(panels).forEach(([k, el]) => { el.hidden = k !== btn.dataset.tab; });
+  }));
+
+  // Auto-resolve latest NConnect .ipa from GitHub Releases (skipping dongle-fw tags)
+  const isAppRel = r => r && !r.draft && /^v\d/i.test(r.tag_name || "") &&
+    Array.isArray(r.assets) && r.assets.some(a => /\.ipa$/i.test(a.name || ""));
+  fetch("https://api.github.com/repos/dmina97-cpu/nconnect-releases/releases?per_page=15")
+    .then(r => r.ok ? r.json() : Promise.reject())
+    .then(list => {
+      const rel = (Array.isArray(list) ? list : []).find(isAppRel);
+      if (!rel) return;
+      const ipa = rel.assets.find(a => /\.ipa$/i.test(a.name || ""));
+      if (!ipa) return;
+      const mb = (ipa.size / 1048576).toFixed(1);
+      document.getElementById("ipaLabel").textContent = `Step 0 — Download NConnect ${rel.tag_name} for iPhone (.ipa)`;
+      document.getElementById("ipaVer").textContent = `${ipa.name} · ${mb} MB · Latest official release`;
+      document.getElementById("ipaBtn").href = ipa.browser_download_url;
+    })
+    .catch(() => {
+      document.getElementById("ipaVer").textContent = "Latest official release on GitHub";
+    });
+})();
+</script>
+</body>
+</html>
